@@ -58,7 +58,7 @@ nav ul li a::after{
     content: '';
     width: 0%;
     height: 3px;
-    background: #ff004f;
+    background: #f5b520;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -114,7 +114,7 @@ nav ul li a:hover::after{
     margin-top: 20px;
 }
 .header-text h1 span{
-    color: #ff004f;
+    color: #f5b520;
 }
 /*---------------about-------------------*/
 #about{
@@ -161,7 +161,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #f5b520;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -175,7 +175,7 @@ nav ul li a:hover::after{
     margin: 10px 0;
 }
 .tab-contants ul li span{
-    color: #b54576;
+    color: #f5b520;
     font-size: 16px;
 }
 /*---------------For Click to show the details-------------------*/
@@ -221,7 +221,7 @@ nav ul li a:hover::after{
     display: inline-block;
 }
 .services-list div:hover{
-    background-color: #ff004f;
+    background-color: #f5b520;
     transform: translateY(-10px);
 }
 /* ----------------Work-------------------------*/
@@ -269,7 +269,7 @@ nav ul li a:hover::after{
 }
 .layer a{
     margin-top:  20px;
-    color: #ff004f;
+    color: #f5b520;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -289,14 +289,14 @@ nav ul li a:hover::after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid #f5b520;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
 }
 .btn:hover{
-    background: #ff004f;
+    background: #f5b520;
     transition: background 0.5s;
 }
 
@@ -319,7 +319,7 @@ nav ul li a:hover::after{
     margin-top: 30px;
 }
 .contact-left p i{
-    color: #ff004f;
+    color: #f5b520;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -335,12 +335,12 @@ nav ul li a:hover::after{
     transition: transform 0.5s;
 }
 .social-icon a:hover{
-    color: #ff004f;
+    color: #f5b520;
     transform: translateY(-5px);
 }
 .btn.btn2{
     display: inline-block;
-    background: #ff004f;
+    background: #f5b520;
 }
 
 
@@ -430,7 +430,7 @@ nav .fa-solid{
 /*======================================8888888============*/
 
     nav ul{
-        background: #ff004f;
+        background: #f5b520;
         position: fixed;
         top: 0;
         right: -200px;
