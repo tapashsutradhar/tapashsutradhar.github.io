@@ -1,0 +1,7 @@
+.skills-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:0 72px}
+.skill-group{margin-bottom:48px}
+.skill-row{display:grid;grid-template-columns:140px 1fr 36px;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--b1)}
+@media(min-width:480px){.skill-row{grid-template-columns:160px 1fr 40px;gap:16px}}
+@media(min-width:768px){.skill-row{grid-template-columns:180px 1fr 40px}}
+.bar-track{height:1px;background:var(--b1);border-radius:1px;overflow:hidden}
+.bar-fill{height:100%;background:var(--t1);width:0;transition:width 1s ease}

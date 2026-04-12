@@ -1,0 +1,6 @@
+.timeline{position:relative;padding-left:28px}
+.timeline-line{position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--b1)}
+.timeline-item{position:relative;padding-left:28px;margin-bottom:52px}
+.timeline-dot{position:absolute;left:-4px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--t1);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--b2)}
+.exp-row{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:768px){.exp-row{grid-template-columns:160px 1fr;gap:40px}}

@@ -1,0 +1,7 @@
+.paper-row{display:grid;grid-template-columns:1fr;gap:16px;padding:32px 0;border-bottom:1px solid var(--b1)}
+@media(min-width:640px){.paper-row{grid-template-columns:110px 1fr;gap:32px}}
+.search-wrap{position:relative;max-width:480px;margin-bottom:48px}
+.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--t4);pointer-events:none}
+.search-input{width:100%;padding:10px 14px 10px 38px;background:var(--bg2);border:1px solid var(--b1);color:var(--t1);font-family:'Inter',sans-serif;font-size:.875rem;outline:none;border-radius:2px;transition:border-color .2s}
+.search-input:focus{border-color:var(--b2)}
+.search-input::placeholder{color:var(--t4)}

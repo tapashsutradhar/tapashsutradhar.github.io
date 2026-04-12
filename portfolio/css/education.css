@@ -1,0 +1,6 @@
+.edu-row{display:grid;grid-template-columns:1fr;gap:12px;padding:28px 0;border-bottom:1px solid var(--b1)}
+@media(min-width:640px){.edu-row{grid-template-columns:160px 1fr;gap:32px}}
+.course-row{display:grid;grid-template-columns:1fr;gap:4px;padding:16px 0;border-bottom:1px solid var(--b1)}
+@media(min-width:640px){.course-row{grid-template-columns:1fr 1fr 160px;gap:24px;align-items:center}}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:1px;background:var(--b1)}
+.cert-card{background:var(--bg);padding:24px 28px}

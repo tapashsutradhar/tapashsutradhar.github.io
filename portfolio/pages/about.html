@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Tapash Sutradhar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<style>
+.about-grid { display:grid; grid-template-columns:1fr; gap:48px; align-items:start; }
+@media(min-width:768px)  { .about-grid { grid-template-columns:300px 1fr; gap:64px; } }
+@media(min-width:1024px) { .about-grid { grid-template-columns:360px 1fr; gap:80px; } }
+.photo-frame { position:relative; border:1px solid var(--b1); max-width:380px; width:100%; }
+@media(min-width:640px) {
+  .photo-frame::after { content:''; position:absolute; inset:8px -8px -8px 8px; border:1px solid var(--b1); z-index:-1; pointer-events:none; }
+}
+.photo-inner { aspect-ratio:3/4; overflow:hidden; background:var(--bg3); position:relative; }
+.photo-inner img { width:100%; height:100%; object-fit:cover; object-position:top; }
+.photo-fallback { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+.photo-initials { width:72px; height:72px; border-radius:50%; background:var(--bg2); border:1px solid var(--b1); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--t2); }
+.avail-badge { position:absolute; bottom:14px; left:14px; background:var(--bg); border:1px solid var(--b1); padding:5px 12px; display:flex; align-items:center; gap:7px; }
+.avail-dot { width:6px; height:6px; border-radius:50%; background:#22c55e; flex-shrink:0; }
+.detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+@media(min-width:640px) { .detail-grid { grid-template-columns:repeat(3,1fr); } }
+.detail-item { padding:24px 0; border-bottom:1px solid var(--b1); }
+</style>
+</head>
+<body>
+<div id="nav-container"></div>
+
+<div class="page-top">
+  <div class="wrap">
+    <p class="kicker" style="animation:fadeUp .6s ease both">About</p>
+    <h1 class="t-headline" style="animation:fadeUp .6s .08s ease both">Tapash Sutradhar</h1>
+    <p class="t-body" style="max-width:460px;margin-top:10px;animation:fadeUp .6s .16s ease both">SDE · SDET · Data Analyst · QA Engineer</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="photo-frame">
+          <div class="photo-inner">
+            <img src="../images/profile.jpg" alt="Tapash Sutradhar"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-fallback" style="display:none">
+              <div class="photo-initials">TS</div>
+              <p class="t-label" style="text-align:center;padding:0 20px">Add photo to images/profile.jpg</p>
+            </div>
+          </div>
+          <div class="avail-badge"><span class="avail-dot"></span><span class="t-label">Open to opportunities</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="reveal mb-lg">
+          <p class="kicker" style="margin-bottom:10px">Professional Summary</p>
+          <p class="t-body" style="line-height:1.85">Detail-oriented software engineer and SDET with hands-on experience across application development, quality engineering, and data analytics. Strong background in building hybrid automation frameworks, REST APIs, and ML-driven analytics pipelines. I am also passionate about continuous learning and staying updated with the latest industry trends and The enthusiast about artificial intelligence AI, ML model.</p>
+        </div>
+        <div class="reveal mb-lg">
+          <p class="kicker" style="margin-bottom:10px">Personal</p>
+          <p class="t-body" style="line-height:1.85">I'm Tapash, a multi-disciplinary engineer from West Bengal. I thrive at the intersection of development, testing, and data — building things that work reliably and scale gracefully.</p>
+        </div>
+        <div class="reveal mb-lg">
+          <p class="kicker" style="margin-bottom:10px">Career Goals</p>
+          <p class="t-body" style="line-height:1.85">My goal is to grow into a senior engineering or tech lead role, contributing to high-impact teams where software quality and data-driven thinking are first-class priorities.</p>
+        </div>
+        <div class="reveal flex flex-wrap gap-lg mt-lg">
+          <a class="btn btn-dark" href="../resume/Tapash_Sutradhar_Resume.pdf" download>
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download Resume
+          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/tapashsutradhar" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section">
+  <div class="wrap">
+    <div class="detail-grid reveal" style="margin-bottom:56px">
+      <div class="detail-item" style="padding-right:32px"><p class="t-label mb-sm">Current role</p><p class="t-title" style="font-size:clamp(.9rem,1.8vw,1.1rem)">Software Development Engineer</p></div>
+      <div class="detail-item" style="padding-left:32px"><p class="t-label mb-sm">Company</p><p class="t-title" style="font-size:clamp(.9rem,1.8vw,1.1rem)">Seap Infotech, Kolkata</p></div>
+      <div class="detail-item" style="padding-right:32px"><p class="t-label mb-sm">Domain</p><p class="t-title" style="font-size:clamp(.9rem,1.8vw,1.1rem)">Banking · Finance · Asset Management</p></div>
+      <div class="detail-item" style="padding-left:32px"><p class="t-label mb-sm">Education</p><p class="t-title" style="font-size:clamp(.9rem,1.8vw,1.1rem)">B.Tech — GPA 9.17</p></div>
+      <div class="detail-item" style="padding-right:32px"><p class="t-label mb-sm">Experience</p><p class="t-title" style="font-size:clamp(.9rem,1.8vw,1.1rem)">2+ years</p></div>
+      <div class="detail-item" style="padding-left:32px"><p class="t-label mb-sm">Location</p><p class="t-title" style="font-size:clamp(.9rem,1.8vw,1.1rem)">Kolkata, India</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:48px">
+      <div class="reveal">
+        <p class="kicker">Languages</p>
+        <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--b1)"><span class="t-body">English</span><span class="t-small">Fluent (C2 Proficient)</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--b1)"><span class="t-body">German (Deutsch)</span><span class="t-small">A2 - Limited Working Proficiency</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--b1)"><span class="t-body">Bengali</span><span class="t-small">Native</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--b1)"><span class="t-body">HIndi</span><span class="t-small">Full Professional</span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="kicker">Certifications</p>
+        <div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • EF SET English Certificate 75/100 (C2 Proficient)</p><p class="t-small"> EF SET </p></div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • Full Stack Software Development & Data Analysis</p><p class="t-small"> Udemy </p></div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • Software Development & Testing (Selenium/Playright Automanion)</p><p class="t-small"> Udemy </p></div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • Business Analysis Professional (IIBA - ECBA/CBAP, PBA )</p><p class="t-small"> Udemy Course </p></div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • Data Analytics Professional</p><p class="t-small"> IBM & Google </p></div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • Python for Everybody Specialization</p><p class="t-small"> University of Michigan </p></div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • Project Management Professional (Agile & SCRUM)</p><p class="t-small"> Google & Microsoft </p></div>
+            <div style="padding:14px 0;border-bottom:1px solid var(--b1)"><p class="t-body" style="font-weight:500;color:var(--t1);margin-bottom:2px"> • McKinsey.org Learning Program</p><p class="t-small"> McKinsey </p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-container" data-root="../"></div>
+<script src="../js/shared.js"></script>
+<script>initShared('about', '../');</script>
+</body>
+</html>

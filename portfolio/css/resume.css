@@ -1,0 +1,2 @@
+.resume-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:var(--b1);margin-bottom:64px}
+.resume-card{background:var(--bg);padding:40px}

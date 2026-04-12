@@ -1,0 +1,3 @@
+.service-row{display:grid;grid-template-columns:1fr;gap:24px;padding:36px 0;border-bottom:1px solid var(--b1)}
+@media(min-width:640px){.service-row{grid-template-columns:80px 1fr;gap:32px}}
+@media(min-width:1024px){.service-row{grid-template-columns:80px 1fr 1fr;gap:48px}}
