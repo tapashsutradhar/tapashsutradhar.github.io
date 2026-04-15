@@ -116,7 +116,7 @@ portfolio-multipage/
     ├── research.html articles.html resume.html
 ```
 
-#### Contact form → email — uses EmailJS (free, no backend needed, works on GitHub Pages). When someone fills the form it sends directly to sutradhartapashapd@gmail.com
+#### Contact form → email — uses EmailJS (free, no backend needed, works on GitHub Pages). When someone fills the form it sends directly to example@gmail.com
 
 #### EmailJS Setup — 3 steps to get email
 
