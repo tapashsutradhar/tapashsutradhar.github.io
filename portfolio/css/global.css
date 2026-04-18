@@ -332,6 +332,8 @@ footer {
 .items-center { align-items: center; }
 
 /* ── Shared Form Input ──────────────────────────────── */
+
+/*
 .input {
   width: 100%;
   padding: 12px 14px;
@@ -345,6 +347,23 @@ footer {
   transition: border-color 0.2s ease;
   -webkit-appearance: none;
 }
+*/
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg2);
+  border: 1px solid var(--b1);
+  color: var(--t1);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  outline: none;
+  border-radius: 2px;
+  transition: border-color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;  /* Added for standard compatibility across browsers */
+}
+
 .input:focus { border-color: var(--b2); }
 .input::placeholder { color: var(--t4); }
 
