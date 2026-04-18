@@ -1,7 +1,7 @@
 const SKILLS = {
   'Programming Languages':[{n:"Java",l:90},{n:"Python",l:85},{n:"JavaScript",l:80},{n:"SQL",l:85},{n:"C# / .NET",l:70},{n:"TypeScript",l:68}],
   'Frontend & Backend':[{n:"React.js",l:80},{n:"Node.js",l:78},{n:"Next.js",l:70},{n:"Express.js",l:75},{n:"HTML / CSS",l:82},{n:"REST APIs",l:88},{n:"MERN Stack",l:78},{n:"Spring Boot",l:72}],
-  'Testing & QA':[{n:"Playwright",l:88},{n:"Selenium",l:82},{n:"Appium",l:75},{n:"Postman",l:90},{n:"Manual Testing",l:90},{n:"JUnit / TestNG",l:80}],
+  'Testing & QA':[{n:"Playwright",l:88},{n:"Selenium",l:82},{n:"Appium",l:75},{n:"Postman",l:90},{n:"Manual Testing",l:90},{n:"JUnit / TestNG",l:80},{n:"CI/CD Integration",l:78},{n:"SDLC",l:85}],
   'Data & Analytics':[{n:"Power BI",l:85},{n:"Pandas",l:82},{n:"Machine Learning",l:72},{n:"Tableau",l:75},{n:"ETL / ELT",l:78},{n:"Excel / VBA",l:80}],
   'Tools & DevOps':[{n:"Jira",l:88},{n:"GitHub",l:80},{n:"MongoDB",l:78},{n:"SQL Server",l:82},{n:"Docker",l:62},{n:"Agile / Scrum",l:88}]
 };
