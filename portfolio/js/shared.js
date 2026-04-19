@@ -163,7 +163,7 @@ function renderFooter(containerId = 'footer-container') {
     <div>
       <p class="t-label mb-md">Pages</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 16px">
-        ${DATA.navPages.map(p => `<a class="footer-link" href="${root}pages/${p}.html" style="text-transform:capitalize">${p}</a>`).join('')}
+        ${DATA.navPages.map(p => `<a class="footer-link" href="${p === 'home' ? root + 'index.html' : root + 'pages/' + p + '.html'}" style="text-transform:capitalize">${p}</a>`).join('')}
       </div>
     </div>
     <div>

@@ -16,7 +16,7 @@ portfolio-multipage/
 │   ├── articles.css
 │   └── resume.css
 ├── js/
-│   ├── shared.js           ← Nav, footer, theme, utils (all pages import this)
+│   ├── shared.js           ← Nav, footer, theme, utils (all pages import this)    166 line ---- ${DATA.navPages.map(p => `<a class="footer-link" href="${root}pages/${p}.html" style="text-transform:capitalize">${p}</a>`).join('')}
 │   ├── skills.js
 │   ├── experience.js
 │   ├── projects.js
