@@ -1,0 +1,74 @@
+What's inside the ZIP
+
+books_package/
+├── pages/books.html        ← the full books page
+├── css/books.css           ← all books-specific styles
+├── data/books-data.js      ← your book database (edit this file only)
+├── images/books/           ← put book cover images here
+└── HOW_TO_INSTALL.txt      ← step-by-step installation guide
+
+
+
+How to install (4 steps)
+Step 1 — Copy the 3 files into your project:
+
+pages/books.html    →  your-project/pages/books.html
+css/books.css       →  your-project/css/books.css
+data/books-data.js  →  your-project/data/books-data.js
+
+Step 2 — Add 'books' to navPages in js/shared.js:
+
+// Find this line:
+navPages: ['home','about','skills','experience','projects','services','education','contact']
+
+// Change to:
+navPages: ['home','about','skills','experience','projects','services','education','books','contact']
+
+That one change makes Books appear in both the navbar and footer automatically.
+Step 3 — Done. Open pages/books.html in your browser.
+
+
+
+How to add a new book (every time)
+Open data/books-data.js and copy this template at the top of the BOOKS array:
+
+js......................................
+{
+  id: 7,                          // increment by 1
+  title: "Book Title",
+  author: "Author Name",
+  cover: "",                      // or "images/books/filename.jpg"
+  genre: "Technical",             // see list below
+  rating: 5,                      // 1 to 5
+  dateRead: "2025-06",            // YYYY-MM
+  pages: 300,
+  amazon: "",                     // link or leave ""
+  summary: "What the book is about.",
+  keyLearnings: [
+    "First thing you learned",
+    "Second thing you learned",
+  ],
+  whoShouldRead: "Who benefits most.",
+  myTake: "Your honest personal opinion."
+},
+
+Available genres (each gets its own color): Technical · Self-Help · Business · Data Science · Leadership · Psychology · Finance · Design
+
+
+
+
+
+
+
+
+
+Features on the page
+
+Stats row — total books, total pages, average rating, number of genres — all auto-calculated
+Genre filter buttons — click to filter by category
+Search — searches title, author, summary, and key learnings in real time
+Expandable cards — click any card to reveal the full review, key learnings list, who-should-read box, and your personal take
+Color-coded by genre — each genre has its own color theme (blue = Technical, violet = Self-Help, cyan = Business, green = Data Science, etc.)
+Cover images — if you add a JPG it shows; if cover is empty it shows a styled color placeholder automatically
+Dark mode — fully works in both light and dark
+Fully responsive — mobile, tablet, and desktop

@@ -1,0 +1,62 @@
+════════════════════════════════════════════
+ BOOKS PAGE — INSTALLATION GUIDE
+════════════════════════════════════════════
+
+3 files to add + 1 line to update in shared.js
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — Copy the 3 new files into your project
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  pages/books.html        →  your-project/pages/books.html
+  css/books.css           →  your-project/css/books.css
+  data/books-data.js      →  your-project/data/books-data.js
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2 — Add "books" to navPages in shared.js
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open  js/shared.js  and find this line:
+
+  navPages: ['home','about','skills','experience','projects','services','education','contact']
+
+Change it to:
+
+  navPages: ['home','about','skills','experience','projects','services','education','books','contact']
+
+That is the only change needed in shared.js.
+The nav and footer will automatically include the Books link.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3 — Fix the footer home link (if not done already)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In renderFooter() in shared.js, replace:
+  href="${root}pages/${p}.html"
+With:
+  href="${p === 'home' ? root + 'index.html' : root + 'pages/' + p + '.html'}"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4 — Add your books to the database
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open  data/books-data.js
+
+Copy the template at the bottom of the file, fill in:
+  title, author, genre, rating, dateRead, pages,
+  summary, keyLearnings, whoShouldRead, myTake
+
+Save the file. The page updates automatically.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5 — (Optional) Add book cover images
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Put JPG files in:  images/books/
+
+Then set the cover field in books-data.js:
+  cover: "images/books/clean-code.jpg"
+
+If cover is "" (empty), a styled color placeholder shows instead.
+
+════════════════════════════════════════════

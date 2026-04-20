@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Books I've read — Tapash Sutradhar. Reviews, key learnings and takeaways from technical and self-development books.">
+<title>Books I've Read — Tapash Sutradhar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/books.css">
+</head>
+<body>
+
+<!-- Nav injected by shared.js -->
+<div id="nav-container"></div>
+
+<!-- ── Page Header ─────────────────────────────────── -->
+<div class="page-top">
+  <div class="wrap">
+    <p class="kicker" style="animation:fadeUp .6s ease both">Reading List</p>
+    <h1 class="t-headline" style="animation:fadeUp .6s .08s ease both">Books I've Read</h1>
+    <p class="t-body" style="max-width:540px;margin-top:12px;animation:fadeUp .6s .16s ease both">
+      Books that shaped how I think about software, data, and growth.
+      Each entry includes what I learned and why I think you should read it too.
+    </p>
+  </div>
+</div>
+
+<!-- ── Main Content ────────────────────────────────── -->
+<section class="section">
+  <div class="wrap">
+
+    <!-- Stats row -->
+    <div class="books-stats reveal" id="books-stats"></div>
+
+    <!-- Filter + search bar -->
+    <div class="filter-bar reveal" id="filter-bar">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Book list -->
+    <div id="books-list">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- No results -->
+    <div id="no-results" class="no-results" style="display:none">
+      <div class="no-results-icon">📚</div>
+      <p>No books match your search.<br>Try a different keyword or filter.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer injected by shared.js -->
+<div id="footer-container" data-root="../"></div>
+
+<!-- Database -->
+<script src="../data/books-data.js"></script>
+<!-- Shared -->
+<script src="../js/shared.js"></script>
+
+<script>
+/* ══════════════════════════════════════════════════════
+   BOOKS PAGE — js/books.js logic (inline for simplicity)
+══════════════════════════════════════════════════════ */
+
+/* ── State ──────────────────────────────────────────── */
+let activeGenre  = 'All';
+let searchQuery  = '';
+let expandedCard = null;
+
+/* ── Genre → CSS class map ──────────────────────────── */
+function genreClass(genre) {
+  return 'genre-' + genre.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '');
+}
+
+/* ── Stars HTML ─────────────────────────────────────── */
+function starsHTML(rating) {
+  let s = '';
+  for (let i = 1; i <= 5; i++) {
+    s += `<span class="star${i <= rating ? ' filled' : ''}">★</span>`;
+  }
+  return s;
+}
+
+/* ── Format date ────────────────────────────────────── */
+function formatDate(d) {
+  if (!d) return '';
+  const [y, m] = d.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${months[parseInt(m,10)-1]} ${y}`;
+}
+
+/* ── Render stats row ───────────────────────────────── */
+function renderStats() {
+  const totalPages = BOOKS.reduce((s, b) => s + (b.pages || 0), 0);
+  const avgRating  = BOOKS.length
+    ? (BOOKS.reduce((s, b) => s + b.rating, 0) / BOOKS.length).toFixed(1)
+    : 0;
+  const genres = [...new Set(BOOKS.map(b => b.genre))].length;
+
+  document.getElementById('books-stats').innerHTML = `
+    <div class="books-stat">
+      <div class="stat-big">${BOOKS.length}</div>
+      <p class="t-label">Books read</p>
+    </div>
+    <div class="books-stat">
+      <div class="stat-big">${totalPages > 0 ? totalPages.toLocaleString() : '—'}</div>
+      <p class="t-label">Pages read</p>
+    </div>
+    <div class="books-stat">
+      <div class="stat-big">${avgRating}</div>
+      <p class="t-label">Avg rating</p>
+    </div>
+    <div class="books-stat">
+      <div class="stat-big">${genres}</div>
+      <p class="t-label">Genres</p>
+    </div>`;
+}
+
+/* ── Render filter bar ──────────────────────────────── */
+function renderFilters() {
+  const genres = ['All', ...new Set(BOOKS.map(b => b.genre))];
+  const fb = document.getElementById('filter-bar');
+
+  fb.innerHTML = `
+    <!-- Search -->
+    <div class="books-search-wrap">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/>
+      </svg>
+      <input
+        class="books-search"
+        id="books-search-input"
+        type="text"
+        placeholder="Search books, authors…"
+        autocomplete="off">
+    </div>
+    <!-- Genre filters -->
+    ${genres.map(g => `
+      <button
+        class="filter-btn${g === activeGenre ? ' active' : ''}"
+        data-genre="${g}">${g}
+      </button>`).join('')}`;
+
+  /* Bind filter buttons */
+  fb.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeGenre = btn.dataset.genre;
+      fb.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderBooks();
+    });
+  });
+
+  /* Bind search */
+  const inp = document.getElementById('books-search-input');
+  inp.addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase().trim();
+    renderBooks();
+  });
+}
+
+/* ── Build one book card HTML ───────────────────────── */
+function buildCard(book) {
+  const gc = genreClass(book.genre);
+
+  /* Cover */
+  const coverHTML = book.cover
+    ? `<img class="book-cover-img" src="${book.cover}" alt="${book.title}" loading="lazy"
+         onerror="this.parentElement.innerHTML=placeholderCover('${book.title}','${gc}')">
+       <div class="cover-genre-strip ${gc}"></div>`
+    : `<div class="book-cover-placeholder">
+         <div class="cover-genre-strip ${gc}"></div>
+         <div class="book-icon">📖</div>
+         <p class="book-cover-title">${book.title}</p>
+       </div>`;
+
+  /* Key learnings */
+  const learnHTML = book.keyLearnings.map((l, i) => `
+    <li class="learning-item">
+      <span class="learning-bullet">${i + 1}</span>
+      <span class="learning-text">${l}</span>
+    </li>`).join('');
+
+  /* Amazon link */
+  const amazonBtn = book.amazon
+    ? `<a href="${book.amazon}" target="_blank" rel="noopener"
+         class="btn btn-outline" style="font-size:.75rem;padding:7px 14px;"
+         onclick="event.stopPropagation()">
+         <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+           <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+         </svg>
+         Buy / View
+       </a>`
+    : '';
+
+  return `
+  <div class="book-card reveal ${gc}" id="book-${book.id}" onclick="toggleCard(${book.id})">
+
+    <!-- Left: cover -->
+    <div class="book-cover-wrap">${coverHTML}</div>
+
+    <!-- Right: content -->
+    <div class="book-content">
+      <div class="book-meta-top">
+        <span class="book-genre-badge ${gc}">${book.genre}</span>
+        <span class="book-date">${formatDate(book.dateRead)}</span>
+      </div>
+      <h2 class="book-title">${book.title}</h2>
+      <p class="book-author">by ${book.author}</p>
+      <div class="book-rating">${starsHTML(book.rating)}</div>
+      <p class="book-summary">${book.summary}</p>
+      <div class="book-footer">
+        ${book.pages ? `<span class="book-pages">${book.pages} pages</span>` : ''}
+        <button class="expand-btn" onclick="toggleCard(${book.id});event.stopPropagation()">
+          Read full review
+          <span class="expand-icon">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Expanded detail (full width) -->
+    <div class="book-detail">
+
+      <div class="detail-section">
+        <p class="detail-label">Summary</p>
+        <p class="t-body" style="line-height:1.8">${book.summary}</p>
+      </div>
+
+      <div class="detail-section">
+        <p class="detail-label">Key learnings (${book.keyLearnings.length})</p>
+        <ul class="learnings-list">${learnHTML}</ul>
+      </div>
+
+      <div class="detail-section">
+        <p class="detail-label">Who should read this</p>
+        <div class="who-box">${book.whoShouldRead}</div>
+      </div>
+
+      <div class="detail-section">
+        <p class="detail-label">My take</p>
+        <div class="my-take-box ${gc}">"${book.myTake}"</div>
+      </div>
+
+      <div class="detail-section" style="padding-top:20px;margin-bottom:0">
+        <div class="flex flex-wrap gap-lg items-center">
+          ${amazonBtn}
+          <button class="btn btn-outline" style="font-size:.75rem;padding:7px 14px"
+            onclick="toggleCard(${book.id});event.stopPropagation()">
+            <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+            </svg>
+            Collapse
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>`;
+}
+
+/* ── Placeholder cover string (used in onerror) ─────── */
+function placeholderCover(title, gc) {
+  return `<div class="book-cover-placeholder ${gc}">
+    <div class="cover-genre-strip ${gc}"></div>
+    <div class="book-icon">📖</div>
+    <p class="book-cover-title">${title}</p>
+  </div>`;
+}
+window.placeholderCover = placeholderCover;
+
+/* ── Toggle card expand ─────────────────────────────── */
+function toggleCard(id) {
+  const card = document.getElementById('book-' + id);
+  if (!card) return;
+
+  /* Collapse previously expanded card */
+  if (expandedCard && expandedCard !== card) {
+    expandedCard.classList.remove('expanded');
+  }
+
+  card.classList.toggle('expanded');
+  expandedCard = card.classList.contains('expanded') ? card : null;
+
+  /* Smooth scroll to card top when expanding */
+  if (card.classList.contains('expanded')) {
+    setTimeout(() => {
+      const top = card.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 50);
+  }
+}
+window.toggleCard = toggleCard;
+
+/* ── Filter + search and render ─────────────────────── */
+function renderBooks() {
+  let list = [...BOOKS];
+
+  /* Sort newest first */
+  list.sort((a, b) => {
+    if (!a.dateRead) return 1;
+    if (!b.dateRead) return -1;
+    return b.dateRead.localeCompare(a.dateRead);
+  });
+
+  /* Filter by genre */
+  if (activeGenre !== 'All') {
+    list = list.filter(b => b.genre === activeGenre);
+  }
+
+  /* Filter by search */
+  if (searchQuery) {
+    list = list.filter(b =>
+      b.title.toLowerCase().includes(searchQuery)  ||
+      b.author.toLowerCase().includes(searchQuery) ||
+      b.summary.toLowerCase().includes(searchQuery)||
+      b.genre.toLowerCase().includes(searchQuery)  ||
+      b.keyLearnings.some(l => l.toLowerCase().includes(searchQuery))
+    );
+  }
+
+  const container = document.getElementById('books-list');
+  const noResults = document.getElementById('no-results');
+
+  if (list.length === 0) {
+    container.innerHTML = '';
+    noResults.style.display = 'block';
+  } else {
+    noResults.style.display = 'none';
+    container.innerHTML = list.map(buildCard).join('');
+    /* Re-run reveals on new elements */
+    setTimeout(initReveals, 60);
+  }
+}
+
+/* ── Init ───────────────────────────────────────────── */
+initShared('books', '../');
+renderStats();
+renderFilters();
+renderBooks();
+</script>
+</body>
+</html>
