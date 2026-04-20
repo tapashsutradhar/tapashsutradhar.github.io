@@ -169,7 +169,49 @@ const BOOKS = [
     ],
     whoShouldRead: "Data analysts and data engineers who use Python daily and want to write faster, cleaner data transformation code.",
     myTake: "This was my reference while building the Power BI ETL pipelines at WBSETCL. I still open it when working with complex time-series aggregations."
-  }
+  },
+
+  {
+    id: 7,
+    title: "Accelerate: The Science of Lean Software and DevOps",
+    author: "Nicole Forsgren, Jez Humble, Gene Kim",
+    cover: "../images/books/accelerate.jpg",
+    genre: "Technical",
+    rating: 5,
+    dateRead: "2026-04",
+    pages: 288,
+    amazon: "https://www.amazon.in/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339",
+    summary: "This book presents research-backed insights into what makes high-performing technology teams successful. It connects DevOps practices to measurable business outcomes like speed, stability, and productivity.",
+    keyLearnings: [
+      "High performance comes from continuous delivery and fast feedback loops",
+      "DevOps practices directly impact business success",
+      "Small batch sizes reduce risk and improve quality",
+      "Culture and leadership are as important as tools"
+    ],
+    whoShouldRead: "Software engineers, DevOps practitioners, and tech leaders aiming to improve delivery performance",
+    myTake: "Very practical and data-driven—one of the most credible books on DevOps. It changed how I think about engineering performance."
+  },
+
+  {
+  id: 8,
+  title: "The Unicorn Project",
+  author: "Gene Kim",
+  cover: "../images/books/the-unicorn-project.jpg",
+  genre: "Technical",
+  rating: 4,
+  dateRead: "2026-04",
+  pages: 352,
+  amazon: "",
+  summary: "A novel that follows a developer navigating a dysfunctional organization while trying to improve systems and processes. It highlights the importance of developer experience, flow, and modern engineering practices.",
+  keyLearnings: [
+    "Developer productivity depends heavily on system design and tooling",
+    "Technical debt slows down innovation significantly",
+    "Empowered teams create better outcomes",
+    "Flow and fast feedback are critical for modern development"
+  ],
+  whoShouldRead: "Developers and engineering leaders dealing with legacy systems or organizational inefficiencies",
+  myTake: "Engaging story format that makes technical concepts easy to grasp. Slightly idealistic at times, but very insightful."
+}
 
 ];
 
