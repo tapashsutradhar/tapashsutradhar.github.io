@@ -211,6 +211,132 @@ const BOOKS = [
   ],
   whoShouldRead: "Developers and engineering leaders dealing with legacy systems or organizational inefficiencies",
   myTake: "Engaging story format that makes technical concepts easy to grasp. Slightly idealistic at times, but very insightful."
+},
+
+{
+  id: 9,
+  title: "The Culture Map",
+  author: "Erin Meyer",
+  cover: "../images/books/the-culture-map.jpg",
+  genre: "Business",
+  rating: 4,
+  dateRead: "2026-04",
+  pages: 288,
+  amazon: "",
+  summary: "This book explores how cultural differences impact communication, leadership, and teamwork across global organizations. It provides practical frameworks to navigate and bridge these differences effectively.",
+  keyLearnings: [
+    "Communication styles vary widely across cultures",
+    "Direct vs indirect feedback can cause misunderstandings",
+    "Trust is built differently in different cultures",
+    "Leadership and decision-making styles are culturally influenced"
+  ],
+  whoShouldRead: "Professionals working in global teams or cross-cultural environments",
+  myTake: "Very practical for real-world work situations. It makes you more aware of subtle cultural differences that often go unnoticed."
+},
+
+{
+  id: 10,
+  title: "Thinking, Fast and Slow",
+  author: "Daniel Kahneman",
+  cover: "../images/books/thinking-fast-and-slow.jpg",
+  genre: "Psychology",
+  rating: 5,
+  dateRead: "2026-04",
+  pages: 499,
+  amazon: "",
+  summary: "This book explores how humans think using two systems: fast, intuitive thinking and slow, logical reasoning. It reveals common cognitive biases that affect decisions.",
+  keyLearnings: [
+    "System 1 is fast but error-prone",
+    "System 2 is slow but logical",
+    "Biases influence everyday decisions",
+    "Awareness can improve judgment"
+  ],
+  whoShouldRead: "Anyone interested in decision-making, psychology, or behavioral science",
+  myTake: "Dense but extremely insightful. It changes how you see your own thinking."
+},
+
+{
+  id: 11,
+  title: "The Lean Startup",
+  author: "Eric Ries",
+  cover: "../images/books/the-lean-startup.jpg",
+  genre: "Business",
+  rating: 4,
+  dateRead: "2026-04",
+  pages: 336,
+  amazon: "",
+  summary: "This book introduces a methodology for building startups through validated learning and rapid experimentation. It emphasizes building products based on customer feedback.",
+  keyLearnings: [
+    "Build-Measure-Learn is the core loop",
+    "Start with a minimum viable product (MVP)",
+    "Validated learning reduces wasted effort",
+    "Pivot when assumptions are wrong"
+  ],
+  whoShouldRead: "Entrepreneurs and product builders looking to launch efficiently",
+  myTake: "Very influential for startups. Some concepts feel obvious now, but still foundational."
+},
+
+{
+  id: 12,
+  title: "Deep Work: Rules for Focused Success in a Distracted World",
+  author: "Cal Newport",
+  cover: "../images/books/deep-work.jpg",
+  genre: "Self-Help",
+  rating: 4,
+  dateRead: "2026-04",
+  pages: 304,
+  amazon: "",
+  summary: "This book argues that the ability to focus deeply is becoming rare and valuable. It provides strategies to cultivate deep work and eliminate distractions.",
+  keyLearnings: [
+    "Deep focus produces higher-quality output",
+    "Distractions reduce cognitive performance",
+    "Schedule focused work intentionally",
+    "Limit shallow work to maximize impact"
+  ],
+  whoShouldRead: "Students, professionals, and creators who struggle with focus and productivity",
+  myTake: "Strong ideas, though slightly repetitive. Still very useful in today's distraction-heavy world."
+},
+
+{
+  id: 13,
+  title: "The Personal MBA: Master the Art of Business",
+  author: "Josh Kaufman",
+  cover: "../images/books/the-personal-mba.jpg",
+  genre: "Business",
+  rating: 4,
+  dateRead: "2026-04",
+  pages: 416,
+  amazon: "",
+  summary: "This book breaks down core business concepts into simple, practical lessons without requiring a formal MBA. It covers areas like value creation, marketing, sales, finance, and systems thinking.",
+  keyLearnings: [
+    "Business is about creating and delivering value",
+    "Understanding systems helps in better decision-making",
+    "Sales and marketing are essential for success",
+    "Financial literacy is crucial for any professional"
+  ],
+  whoShouldRead: "Anyone who wants to understand business fundamentals without going to business school",
+  myTake: "A solid alternative to an MBA for self-learners. Broad coverage, though not very deep in each topic."
+},
+
+{
+  id: 14,
+  title: "HBR's 10 Must Reads",
+  author: "Harvard Business Review",
+  cover: "../images/books/hbr-10-must-reads.jpg",
+  genre: "Business",
+  rating: 5,
+  dateRead: "2026-04",
+  pages: 2656,
+  amazon: "",
+  summary: "This collection brings together some of the most influential articles from Harvard Business Review on topics like leadership, strategy, innovation, and management. Each piece is written by experts and provides practical insights for real-world business challenges.",
+  keyLearnings: [
+    "Effective leadership requires both vision and execution",
+    "Strategy is about making clear choices and trade-offs",
+    "Innovation comes from understanding customer needs deeply",
+    "Managing people is as important as managing processes"
+  ],
+  whoShouldRead: "Managers, entrepreneurs, and professionals looking to build strong business and leadership skills",
+  myTake: "A high-value collection of timeless business insights. Great for quick learning, though depth varies by article."
 }
 
 ];
