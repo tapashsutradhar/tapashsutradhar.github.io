@@ -493,3 +493,57 @@
   border-radius: 6px;
   transition: width 1.2s ease;
 }
+
+
+
+
+
+
+
+/* ── Formatted full summary ──────────────────────────── */
+.book-full-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.summary-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--t1);
+  margin-top: 8px;
+  margin-bottom: 2px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--b1);
+}
+.summary-subheading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--t2);
+  margin-top: 4px;
+}
+.summary-para {
+  font-size: 0.9rem;
+  color: var(--t2);
+  line-height: 1.8;
+  margin: 0;
+}
+.summary-bullet {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--t2);
+  line-height: 1.7;
+}
+.summary-bullet-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--t3);
+  margin-top: 7px;
+}
+.summary-bullet strong { color: var(--t1); }
+.summary-para strong   { color: var(--t1); }
+

@@ -240,7 +240,7 @@ function buildCard(book) {
 
       <div class="detail-section">
         <p class="detail-label">Summary</p>
-        <p class="t-body" style="line-height:1.8">${book.summary}</p>
+        <div class="book-full-summary">${renderSummary(book.fullSummary || book.summary)}</div>
       </div>
 
       <div class="detail-section">
@@ -307,6 +307,35 @@ function toggleCard(id) {
   }
 }
 window.toggleCard = toggleCard;
+
+/* ── Render formatted summary ───────────────────────── */
+function renderSummary(text) {
+  if (!text) return '';
+  return text
+    .split('\n')
+    .filter(line => line.trim() !== '')
+    .map(line => {
+      line = line.trim();
+
+      // ## Heading
+      if (line.startsWith('## ')) {
+        return `<h4 class="summary-heading">${line.slice(3)}</h4>`;
+      }
+      // ### Sub-heading
+      if (line.startsWith('### ')) {
+        return `<h5 class="summary-subheading">${line.slice(4)}</h5>`;
+      }
+      // - Bullet point
+      if (line.startsWith('- ')) {
+        return `<div class="summary-bullet"><span class="summary-bullet-dot"></span><span>${line.slice(2)}</span></div>`;
+      }
+      // **Bold** inline
+      line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // Regular paragraph
+      return `<p class="summary-para">${line}</p>`;
+    })
+    .join('');
+}
 
 /* ── Filter + search and render ─────────────────────── */
 function renderBooks() {
