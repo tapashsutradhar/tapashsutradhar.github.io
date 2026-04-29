@@ -10,210 +10,290 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/global.css">
 <link rel="stylesheet" href="../css/books.css">
-
-<!-- Favicons -->
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
 <link rel="shortcut icon" href="../favicon/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-<link rel="manifest" href="../favicon/site.webmanifest">
+<style>
+/* Back bar sits above navbar */
+.back-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 40px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--b1);
+  display: flex;
+  align-items: center;
+}
+.back-bar-inner {
+  width: 100%; max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+@media(min-width:480px){.back-bar-inner{padding:0 24px}}
+@media(min-width:768px){.back-bar-inner{padding:0 40px}}
+@media(min-width:1024px){.back-bar-inner{padding:0 56px}}
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.75rem; font-weight: 500;
+  color: var(--t3); text-decoration: none;
+  transition: color 0.15s; white-space: nowrap;
+}
+.back-link:hover { color: var(--t1); }
+.back-bar-center {
+  font-size: 0.6875rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--t4); white-space: nowrap;
+}
+
+/* Push navbar + content below back-bar */
+#navbar      { top: 40px !important; }
+#mobile-menu { padding-top: calc(40px + var(--nav-h) + 20px) !important; }
+#progress    { top: 40px !important; }
+.page-top    { padding-top: calc(40px + var(--nav-h) + 52px) !important; }
+@media(min-width:768px){
+  .page-top  { padding-top: calc(40px + var(--nav-h) + 72px) !important; }
+}
+
+/* Bottom CTA band */
+.books-cta {
+  background: var(--bg2);
+  border-top: 1px solid var(--b1);
+  padding: clamp(48px,6vw,72px) 0;
+  text-align: center;
+}
+
+/* Tab styles */
+.detail-tabs {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--b1);
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.detail-tabs::-webkit-scrollbar { display: none; }
+.detail-tab {
+  background: none; border: none;
+  padding: 12px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem; font-weight: 500;
+  color: var(--t3); cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.detail-tab:hover { color: var(--t1); }
+.detail-tab.active { color: var(--t1); border-bottom-color: var(--t1); font-weight: 600; }
+
+.detail-pane { animation: paneIn 0.25s ease; }
+@keyframes paneIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+
+.detail-actions {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  padding-top: 20px; margin-top: 20px;
+  border-top: 1px solid var(--b1);
+}
+
+.verdict-grid {
+  display: grid; grid-template-columns: 1fr; gap: 20px;
+}
+@media(min-width:768px){ .verdict-grid { grid-template-columns: 1fr 1fr; } }
+.verdict-block { display: flex; flex-direction: column; gap: 10px; }
+.verdict-label {
+  font-size: 0.6875rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--t3);
+}
+
+/* Full summary formatter */
+.full-summary-wrap { display: flex; flex-direction: column; gap: 8px; }
+.fs-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.0625rem; font-weight: 600; color: var(--t1);
+  margin-top: 16px; margin-bottom: 2px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--b1); line-height: 1.3;
+}
+.fs-heading:first-child { margin-top: 0; }
+.fs-subheading { font-size: 0.9375rem; font-weight: 600; color: var(--t2); margin-top: 10px; }
+.fs-para { font-size: 0.9rem; color: var(--t2); line-height: 1.82; margin: 0; }
+.fs-para strong { color: var(--t1); font-weight: 600; }
+.fs-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.fs-item { display: flex; gap: 10px; align-items: flex-start; }
+.fs-dot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--t3); margin-top: 8px; }
+.fs-item-text { font-size: 0.9rem; color: var(--t2); line-height: 1.75; }
+.fs-item-text strong { color: var(--t1); font-weight: 600; }
+pre.fs-code {
+  background: var(--bg3); border: 1px solid var(--b1); border-radius: 6px;
+  padding: 14px 16px; overflow-x: auto; margin: 8px 0;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
+  line-height: 1.65; color: var(--t2);
+}
+</style>
 </head>
 <body>
 
-<!-- Nav injected by shared.js -->
-<div id="nav-container"></div>
-
-<!-- ── Page Header ─────────────────────────────────── -->
-<div class="page-top">
-  <div class="wrap">
-    <p class="kicker" style="animation:fadeUp .6s ease both">Reading List</p>
-    <h1 class="t-headline" style="animation:fadeUp .6s .08s ease both">Books I've Read</h1>
-    <p class="t-body" style="max-width:540px;margin-top:12px;animation:fadeUp .6s .16s ease both">
-      Books that shaped how I think about software, data, and growth.
-      Each entry includes what I learned and why I think you should read it too.
-    </p>
+<!-- Back to portfolio bar -->
+<div class="back-bar">
+  <div class="back-bar-inner">
+    <a class="back-link" href="../index.html">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+      </svg>
+      Back to Portfolio
+    </a>
+    <span class="back-bar-center">Reading List</span>
+    <a class="back-link" href="../pages/contact.html">
+      Hire Me
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+      </svg>
+    </a>
   </div>
 </div>
 
-<!-- ── Main Content ────────────────────────────────── -->
+<!-- Nav — books NOT listed in nav -->
+<div id="nav-container"></div>
+
+<!-- Page header -->
+<div class="page-top">
+  <div class="wrap">
+    <p class="kicker" style="animation:fadeUp .6s ease both">Continuous Learning</p>
+    <h1 class="t-headline" style="animation:fadeUp .6s .08s ease both">Books I've Read</h1>
+    <p class="t-body" style="max-width:540px;margin-top:12px;animation:fadeUp .6s .16s ease both">
+      Books that shaped how I think about software, data, and growth.
+      Each entry includes key learnings and why I think you should read it too.
+    </p>
+    <div class="flex flex-wrap gap-lg" style="margin-top:28px;animation:fadeUp .6s .22s ease both">
+      <a class="btn btn-dark" href="../index.html">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        View Portfolio
+      </a>
+      <a class="btn btn-outline" href="../pages/contact.html">Hire Me</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main content -->
 <section class="section">
   <div class="wrap">
-
-    <!-- Stats row -->
     <div class="books-stats reveal" id="books-stats"></div>
-
-    <!-- Filter + search bar -->
-    <div class="filter-bar reveal" id="filter-bar">
-      <!-- Injected by JS -->
-    </div>
-
-    <!-- Book list -->
-    <div id="books-list">
-      <!-- Injected by JS -->
-    </div>
-
-    <!-- No results -->
+    <div class="filter-bar reveal" id="filter-bar"></div>
+    <div id="books-list"></div>
     <div id="no-results" class="no-results" style="display:none">
       <div class="no-results-icon">📚</div>
       <p>No books match your search.<br>Try a different keyword or filter.</p>
     </div>
-
   </div>
 </section>
 
-<!-- Footer injected by shared.js -->
+<!-- Bottom CTA -->
+<div class="books-cta">
+  <div class="wrap">
+    <p class="kicker">Seen enough?</p>
+    <h2 class="t-headline" style="max-width:480px;margin:0 auto 16px">Let's work together</h2>
+    <p class="t-body" style="max-width:380px;margin:0 auto 28px">
+      View my full portfolio — experience, projects, skills, and contact details.
+    </p>
+    <div class="flex flex-wrap gap-lg" style="justify-content:center">
+      <a class="btn btn-dark" href="../index.html">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        View Portfolio
+      </a>
+      <a class="btn btn-outline" href="../pages/contact.html">Contact Me</a>
+      <a class="btn btn-outline" href="../resume/Tapash_Sutradhar_Resume.pdf" download>
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        Download Resume
+      </a>
+    </div>
+  </div>
+</div>
+
 <div id="footer-container" data-root="../"></div>
-
-<!-- Database -->
 <script src="../data/books-data.js"></script>
-<!-- Shared -->
 <script src="../js/shared.js"></script>
-
 <script>
-/* ══════════════════════════════════════════════════════
-   BOOKS PAGE — js/books.js logic (inline for simplicity)
-══════════════════════════════════════════════════════ */
+let activeGenre = 'All', searchQuery = '', expandedCard = null;
 
-/* ── State ──────────────────────────────────────────── */
-let activeGenre  = 'All';
-let searchQuery  = '';
-let expandedCard = null;
+function genreClass(g){ return 'genre-'+g.toLowerCase().replace(/\s+/g,'-').replace(/&/g,''); }
+function starsHTML(r){ let s=''; for(let i=1;i<=5;i++) s+=`<span class="star${i<=r?' filled':''}">★</span>`; return s; }
+function formatDate(d){ if(!d)return''; const[y,m]=d.split('-'); return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][parseInt(m,10)-1]+' '+y; }
 
-/* ── Genre → CSS class map ──────────────────────────── */
-function genreClass(genre) {
-  return 'genre-' + genre.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '');
+function renderStats(){
+  const tp=BOOKS.reduce((s,b)=>s+(b.pages||0),0);
+  const ar=BOOKS.length?(BOOKS.reduce((s,b)=>s+b.rating,0)/BOOKS.length).toFixed(1):0;
+  const gn=[...new Set(BOOKS.map(b=>b.genre))].length;
+  document.getElementById('books-stats').innerHTML=`
+    <div class="books-stat"><div class="stat-big">${BOOKS.length}</div><p class="t-label">Books read</p></div>
+    <div class="books-stat"><div class="stat-big">${tp>0?tp.toLocaleString():'—'}</div><p class="t-label">Pages read</p></div>
+    <div class="books-stat"><div class="stat-big">${ar}</div><p class="t-label">Avg rating</p></div>
+    <div class="books-stat"><div class="stat-big">${gn}</div><p class="t-label">Genres</p></div>`;
 }
 
-/* ── Stars HTML ─────────────────────────────────────── */
-function starsHTML(rating) {
-  let s = '';
-  for (let i = 1; i <= 5; i++) {
-    s += `<span class="star${i <= rating ? ' filled' : ''}">★</span>`;
-  }
-  return s;
-}
-
-/* ── Format date ────────────────────────────────────── */
-function formatDate(d) {
-  if (!d) return '';
-  const [y, m] = d.split('-');
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return `${months[parseInt(m,10)-1]} ${y}`;
-}
-
-/* ── Render stats row ───────────────────────────────── */
-function renderStats() {
-  const totalPages = BOOKS.reduce((s, b) => s + (b.pages || 0), 0);
-  const avgRating  = BOOKS.length
-    ? (BOOKS.reduce((s, b) => s + b.rating, 0) / BOOKS.length).toFixed(1)
-    : 0;
-  const genres = [...new Set(BOOKS.map(b => b.genre))].length;
-
-  document.getElementById('books-stats').innerHTML = `
-    <div class="books-stat">
-      <div class="stat-big">${BOOKS.length}</div>
-      <p class="t-label">Books read</p>
-    </div>
-    <div class="books-stat">
-      <div class="stat-big">${totalPages > 0 ? totalPages.toLocaleString() : '—'}</div>
-      <p class="t-label">Pages read</p>
-    </div>
-    <div class="books-stat">
-      <div class="stat-big">${avgRating}</div>
-      <p class="t-label">Avg rating</p>
-    </div>
-    <div class="books-stat">
-      <div class="stat-big">${genres}</div>
-      <p class="t-label">Genres</p>
-    </div>`;
-}
-
-/* ── Render filter bar ──────────────────────────────── */
-function renderFilters() {
-  const genres = ['All', ...new Set(BOOKS.map(b => b.genre))];
-  const fb = document.getElementById('filter-bar');
-
-  fb.innerHTML = `
-    <!-- Search -->
+function renderFilters(){
+  const genres=['All',...new Set(BOOKS.map(b=>b.genre))];
+  const fb=document.getElementById('filter-bar');
+  fb.innerHTML=`
     <div class="books-search-wrap">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/>
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/>
-      </svg>
-      <input
-        class="books-search"
-        id="books-search-input"
-        type="text"
-        placeholder="Search books, authors…"
-        autocomplete="off">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg>
+      <input class="books-search" id="bsi" type="text" placeholder="Search books, authors, topics…" autocomplete="off">
     </div>
-    <!-- Genre filters -->
-    ${genres.map(g => `
-      <button
-        class="filter-btn${g === activeGenre ? ' active' : ''}"
-        data-genre="${g}">${g}
-      </button>`).join('')}`;
-
-  /* Bind filter buttons */
-  fb.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      activeGenre = btn.dataset.genre;
-      fb.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      renderBooks();
-    });
-  });
-
-  /* Bind search */
-  const inp = document.getElementById('books-search-input');
-  inp.addEventListener('input', e => {
-    searchQuery = e.target.value.toLowerCase().trim();
-    renderBooks();
-  });
+    ${genres.map(g=>`<button class="filter-btn${g===activeGenre?' active':''}" data-genre="${g}">${g}</button>`).join('')}`;
+  fb.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',()=>{
+    activeGenre=b.dataset.genre;
+    fb.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); renderBooks();
+  }));
+  document.getElementById('bsi').addEventListener('input',e=>{ searchQuery=e.target.value.toLowerCase().trim(); renderBooks(); });
 }
 
-/* ── Build one book card HTML ───────────────────────── */
-function buildCard(book) {
-  const gc = genreClass(book.genre);
+function renderSummary(text){
+  if(!text)return'';
+  const lines=text.split('\n');
+  let html='',inList=false,inCode=false,codeBuffer='';
+  const inline=t=>t.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/_(.+?)_/g,'<em>$1</em>');
+  lines.forEach(raw=>{
+    const line=raw.trim();
+    if(line.startsWith('```')){
+      if(!inCode){if(inList){html+='</ul>';inList=false;}inCode=true;codeBuffer='';}
+      else{html+=`<pre class="fs-code">${codeBuffer.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>`;inCode=false;}
+      return;
+    }
+    if(inCode){codeBuffer+=raw+'\n';return;}
+    if(!line){if(inList){html+='</ul>';inList=false;}return;}
+    if(line.startsWith('## ')){if(inList){html+='</ul>';inList=false;}html+=`<h4 class="fs-heading">${inline(line.slice(3))}</h4>`;}
+    else if(line.startsWith('### ')){if(inList){html+='</ul>';inList=false;}html+=`<h5 class="fs-subheading">${inline(line.slice(4))}</h5>`;}
+    else if(line.startsWith('- ')||line.startsWith('* ')){if(!inList){html+='<ul class="fs-list">';inList=true;}html+=`<li class="fs-item"><span class="fs-dot"></span><span class="fs-item-text">${inline(line.slice(2))}</span></li>`;}
+    else if(line.match(/^\d+\. /)){if(!inList){html+='<ul class="fs-list">';inList=true;}html+=`<li class="fs-item"><span class="fs-dot"></span><span class="fs-item-text">${inline(line.replace(/^\d+\. /,''))}</span></li>`;}
+    else{if(inList){html+='</ul>';inList=false;}html+=`<p class="fs-para">${inline(line)}</p>`;}
+  });
+  if(inList)html+='</ul>';
+  return html;
+}
 
-  /* Cover */
-  const coverHTML = book.cover
-    ? `<img class="book-cover-img" src="${book.cover}" alt="${book.title}" loading="lazy"
-         onerror="this.parentElement.innerHTML=placeholderCover('${book.title}','${gc}')">
-       <div class="cover-genre-strip ${gc}"></div>`
-    : `<div class="book-cover-placeholder">
-         <div class="cover-genre-strip ${gc}"></div>
-         <div class="book-icon">📖</div>
-         <p class="book-cover-title">${book.title}</p>
-       </div>`;
-
-  /* Key learnings */
-  const learnHTML = book.keyLearnings.map((l, i) => `
-    <li class="learning-item">
-      <span class="learning-bullet">${i + 1}</span>
-      <span class="learning-text">${l}</span>
-    </li>`).join('');
-
-  /* Amazon link */
-  const amazonBtn = book.amazon
-    ? `<a href="${book.amazon}" target="_blank" rel="noopener"
-         class="btn btn-outline" style="font-size:.75rem;padding:7px 14px;"
-         onclick="event.stopPropagation()">
-         <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-           <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-         </svg>
-         Read
-       </a>`
-    : '';
-
+function buildCard(book){
+  const gc=genreClass(book.genre);
+  const coverHTML=book.cover
+    ?`<img class="book-cover-img" src="${book.cover}" alt="${book.title}" loading="lazy" onerror="this.parentElement.innerHTML=window.pc('${book.title}','${gc}')"><div class="cover-genre-strip ${gc}"></div>`
+    :`<div class="book-cover-placeholder ${gc}"><div class="cover-genre-strip ${gc}"></div><div class="book-icon">📖</div><p class="book-cover-title">${book.title}</p></div>`;
+  const learnHTML=book.keyLearnings.map((l,i)=>`<li class="learning-item"><span class="learning-bullet">${i+1}</span><span class="learning-text">${l}</span></li>`).join('');
+  const summaryContent=book.fullSummary?renderSummary(book.fullSummary):`<p class="fs-para">${book.summary}</p>`;
+  const amazonBtn=book.amazon?`<a href="${book.amazon}" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:.75rem;padding:7px 14px" onclick="event.stopPropagation()"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>Buy</a>`:'';
   return `
-  <div class="book-card reveal ${gc}" id="book-${book.id}" onclick="toggleCard(${book.id})">
-
-    <!-- Left: cover -->
+  <div class="book-card reveal ${gc}" id="book-${book.id}">
     <div class="book-cover-wrap">${coverHTML}</div>
-
-    <!-- Right: content -->
-    <div class="book-content">
+    <div class="book-content" onclick="toggleCard(${book.id})" style="cursor:pointer">
       <div class="book-meta-top">
         <span class="book-genre-badge ${gc}">${book.genre}</span>
         <span class="book-date">${formatDate(book.dateRead)}</span>
@@ -223,163 +303,86 @@ function buildCard(book) {
       <div class="book-rating">${starsHTML(book.rating)}</div>
       <p class="book-summary">${book.summary}</p>
       <div class="book-footer">
-        ${book.pages ? `<span class="book-pages">${book.pages} pages</span>` : ''}
+        ${book.pages?`<span class="book-pages">${book.pages.toLocaleString()} pages</span>`:''}
         <button class="expand-btn" onclick="toggleCard(${book.id});event.stopPropagation()">
           Read full review
-          <span class="expand-icon">
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </span>
+          <span class="expand-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></span>
         </button>
       </div>
     </div>
-
-    <!-- Expanded detail (full width) -->
     <div class="book-detail">
-
-      <div class="detail-section">
-        <p class="detail-label">Summary</p>
-        <div class="book-full-summary">${renderSummary(book.fullSummary || book.summary)}</div>
+      <div class="detail-tabs" id="tabs-${book.id}">
+        <button class="detail-tab active" onclick="switchTab(${book.id},'summary',this)">Summary</button>
+        <button class="detail-tab" onclick="switchTab(${book.id},'learnings',this)">Key Highlights (${book.keyLearnings.length})</button>
+        <button class="detail-tab" onclick="switchTab(${book.id},'verdict',this)">My Verdict</button>
       </div>
-
-      <div class="detail-section">
-        <p class="detail-label">Key learnings (${book.keyLearnings.length})</p>
+      <div class="detail-pane" id="pane-summary-${book.id}">
+        <div class="full-summary-wrap">${summaryContent}</div>
+      </div>
+      <div class="detail-pane" id="pane-learnings-${book.id}" style="display:none">
         <ul class="learnings-list">${learnHTML}</ul>
       </div>
-
-      <div class="detail-section">
-        <p class="detail-label">Who should read this</p>
-        <div class="who-box">${book.whoShouldRead}</div>
-      </div>
-
-      <div class="detail-section">
-        <p class="detail-label">My take</p>
-        <div class="my-take-box ${gc}">"${book.myTake}"</div>
-      </div>
-
-      <div class="detail-section" style="padding-top:20px;margin-bottom:0">
-        <div class="flex flex-wrap gap-lg items-center">
-          ${amazonBtn}
-          <button class="btn btn-outline" style="font-size:.75rem;padding:7px 14px"
-            onclick="toggleCard(${book.id});event.stopPropagation()">
-            <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-            </svg>
-            Collapse
-          </button>
+      <div class="detail-pane" id="pane-verdict-${book.id}" style="display:none">
+        <div class="verdict-grid">
+          <div class="verdict-block"><p class="verdict-label">Who should read this</p><div class="who-box">${book.whoShouldRead}</div></div>
+          <div class="verdict-block"><p class="verdict-label">My personal take</p><div class="my-take-box ${gc}">"${book.myTake}"</div></div>
         </div>
       </div>
-
+      <div class="detail-actions">
+        ${amazonBtn}
+        <a class="btn btn-outline" href="../index.html" style="font-size:.75rem;padding:7px 14px">
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          Portfolio
+        </a>
+        <button class="btn btn-outline" style="font-size:.75rem;padding:7px 14px" onclick="toggleCard(${book.id});event.stopPropagation()">
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+          Collapse
+        </button>
+      </div>
     </div>
   </div>`;
 }
 
-/* ── Placeholder cover string (used in onerror) ─────── */
-function placeholderCover(title, gc) {
-  return `<div class="book-cover-placeholder ${gc}">
-    <div class="cover-genre-strip ${gc}"></div>
-    <div class="book-icon">📖</div>
-    <p class="book-cover-title">${title}</p>
-  </div>`;
-}
-window.placeholderCover = placeholderCover;
+window.pc = function(title,gc){ return `<div class="book-cover-placeholder ${gc}"><div class="cover-genre-strip ${gc}"></div><div class="book-icon">📖</div><p class="book-cover-title">${title}</p></div>`; };
 
-/* ── Toggle card expand ─────────────────────────────── */
-function toggleCard(id) {
-  const card = document.getElementById('book-' + id);
-  if (!card) return;
-
-  /* Collapse previously expanded card */
-  if (expandedCard && expandedCard !== card) {
-    expandedCard.classList.remove('expanded');
-  }
-
+function toggleCard(id){
+  const card=document.getElementById('book-'+id);
+  if(!card)return;
+  if(expandedCard&&expandedCard!==card)expandedCard.classList.remove('expanded');
   card.classList.toggle('expanded');
-  expandedCard = card.classList.contains('expanded') ? card : null;
-
-  /* Smooth scroll to card top when expanding */
-  if (card.classList.contains('expanded')) {
-    setTimeout(() => {
-      const top = card.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }, 50);
+  expandedCard=card.classList.contains('expanded')?card:null;
+  if(card.classList.contains('expanded')){
+    setTimeout(()=>{ const top=card.getBoundingClientRect().top+window.scrollY-100; window.scrollTo({top,behavior:'smooth'}); },50);
   }
 }
-window.toggleCard = toggleCard;
+window.toggleCard=toggleCard;
 
-/* ── Render formatted summary ───────────────────────── */
-function renderSummary(text) {
-  if (!text) return '';
-  return text
-    .split('\n')
-    .filter(line => line.trim() !== '')
-    .map(line => {
-      line = line.trim();
+function switchTab(bookId,tab,btn){
+  ['summary','learnings','verdict'].forEach(t=>{ const p=document.getElementById(`pane-${t}-${bookId}`); if(p)p.style.display='none'; });
+  const active=document.getElementById(`pane-${tab}-${bookId}`);
+  if(active)active.style.display='block';
+  const tabs=document.getElementById(`tabs-${bookId}`);
+  if(tabs)tabs.querySelectorAll('.detail-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); btn.blur();
+}
+window.switchTab=switchTab;
 
-      // ## Heading
-      if (line.startsWith('## ')) {
-        return `<h4 class="summary-heading">${line.slice(3)}</h4>`;
-      }
-      // ### Sub-heading
-      if (line.startsWith('### ')) {
-        return `<h5 class="summary-subheading">${line.slice(4)}</h5>`;
-      }
-      // - Bullet point
-      if (line.startsWith('- ')) {
-        return `<div class="summary-bullet"><span class="summary-bullet-dot"></span><span>${line.slice(2)}</span></div>`;
-      }
-      // **Bold** inline
-      line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-      // Regular paragraph
-      return `<p class="summary-para">${line}</p>`;
-    })
-    .join('');
+function renderBooks(){
+  let list=[...BOOKS].sort((a,b)=>{ if(!a.dateRead)return 1; if(!b.dateRead)return-1; return b.dateRead.localeCompare(a.dateRead); });
+  if(activeGenre!=='All')list=list.filter(b=>b.genre===activeGenre);
+  if(searchQuery)list=list.filter(b=>
+    b.title.toLowerCase().includes(searchQuery)||b.author.toLowerCase().includes(searchQuery)||
+    b.summary.toLowerCase().includes(searchQuery)||b.genre.toLowerCase().includes(searchQuery)||
+    (b.fullSummary||'').toLowerCase().includes(searchQuery)||
+    b.keyLearnings.some(l=>l.toLowerCase().includes(searchQuery))
+  );
+  const c=document.getElementById('books-list'), nr=document.getElementById('no-results');
+  if(list.length===0){c.innerHTML='';nr.style.display='block';}
+  else{nr.style.display='none';c.innerHTML=list.map(buildCard).join('');setTimeout(initReveals,60);}
 }
 
-/* ── Filter + search and render ─────────────────────── */
-function renderBooks() {
-  let list = [...BOOKS];
-
-  /* Sort newest first */
-  list.sort((a, b) => {
-    if (!a.dateRead) return 1;
-    if (!b.dateRead) return -1;
-    return b.dateRead.localeCompare(a.dateRead);
-  });
-
-  /* Filter by genre */
-  if (activeGenre !== 'All') {
-    list = list.filter(b => b.genre === activeGenre);
-  }
-
-  /* Filter by search */
-  if (searchQuery) {
-    list = list.filter(b =>
-      b.title.toLowerCase().includes(searchQuery)  ||
-      b.author.toLowerCase().includes(searchQuery) ||
-      b.summary.toLowerCase().includes(searchQuery)||
-      b.genre.toLowerCase().includes(searchQuery)  ||
-      b.keyLearnings.some(l => l.toLowerCase().includes(searchQuery))
-    );
-  }
-
-  const container = document.getElementById('books-list');
-  const noResults = document.getElementById('no-results');
-
-  if (list.length === 0) {
-    container.innerHTML = '';
-    noResults.style.display = 'block';
-  } else {
-    noResults.style.display = 'none';
-    container.innerHTML = list.map(buildCard).join('');
-    /* Re-run reveals on new elements */
-    setTimeout(initReveals, 60);
-  }
-}
-
-/* ── Init ───────────────────────────────────────────── */
-initShared('books', '../');
+/* books is NOT in nav — pass empty string as current page */
+initShared('', '../');
 renderStats();
 renderFilters();
 renderBooks();

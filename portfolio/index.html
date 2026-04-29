@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Tapash Sutradhar — SDE · SDET · Data Analyst · QA Engineer based in Kolkata, India">
-<title>Tapash Sutradhar — SDE · SDET · Data Analyst · QA Engineer </title>
+<title>Tapash Sutradhar — SDE · SDET · Data Analyst · QA Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/global.css">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+
 <style>
 /* ── Hero ─────────────────────────────────────────── */
 .hero {
@@ -20,105 +28,384 @@
   padding-bottom: 80px;
 }
 .hero-content { max-width: 860px; }
-
-/* Typing cursor */
 .type-cursor {
-  display: inline-block;
-  width: 2px; height: 0.9em;
-  background: var(--t1);
-  margin-left: 2px;
-  vertical-align: middle;
-  animation: blink 0.9s step-end infinite;
+  display: inline-block; width: 2px; height: 0.9em;
+  background: var(--t1); margin-left: 2px;
+  vertical-align: middle; animation: blink 0.9s step-end infinite;
 }
 
-/* Stats row — fixed layout */
+/* Stats row */
 .stats-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid var(--b1);
-  margin-top: 56px;
-  padding-top: 0;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--b1); margin-top: 56px;
 }
 @media (min-width: 640px)  { .stats-row { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 1024px) { .stats-row { grid-template-columns: repeat(5, 1fr); } }
-
-.stat {
-  padding: 28px 0;
-  border-right: 1px solid var(--b1);
-  padding-right: 20px;
-}
-.stat:nth-child(even) {
-  padding-right: 0;
-  padding-left: 20px;
-  border-right: none;
-}
+.stat { padding: 28px 0; border-right: 1px solid var(--b1); padding-right: 20px; }
+.stat:nth-child(even) { padding-right: 0; padding-left: 20px; border-right: none; }
 @media (min-width: 640px) {
-  .stat              { padding: 28px 28px 28px 0; border-right: 1px solid var(--b1); }
+  .stat { padding: 28px 28px 28px 0; border-right: 1px solid var(--b1); }
   .stat:nth-child(even) { padding-left: 0; border-right: 1px solid var(--b1); }
-  .stat:last-child   { border-right: none; }
+  .stat:last-child { border-right: none; }
 }
-@media (min-width: 1024px) {
-  .stat { padding: 32px 32px 32px 0; }
-}
+@media (min-width: 1024px) { .stat { padding: 32px 32px 32px 0; } }
 .stat:last-child { border-right: none; }
-
 .stat-val {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 500;
-  color: var(--t1);
-  line-height: 1;
-  margin-bottom: 6px;
+  font-weight: 500; color: var(--t1); line-height: 1; margin-bottom: 6px;
 }
 
 /* Home exp preview */
 .home-exp-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 24px 0;
-  border-top: 1px solid var(--b1);
+  display: grid; grid-template-columns: 1fr;
+  gap: 10px; padding: 24px 0; border-top: 1px solid var(--b1);
 }
 @media (min-width: 640px) {
   .home-exp-row { grid-template-columns: 1fr 3fr; gap: 32px; align-items: start; }
 }
 
-/* Home featured projects */
+/* Featured projects */
 .feat-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1px;
-  background: var(--b1);
+  display: grid; grid-template-columns: 1fr;
+  gap: 1px; background: var(--b1);
 }
 @media (min-width: 600px)  { .feat-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1024px) { .feat-grid { grid-template-columns: repeat(3, 1fr); } }
-
 .feat-card { background: var(--bg); padding: clamp(20px, 3vw, 28px); }
 .feat-img  { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg3); border: 1px solid var(--b1); margin-bottom: 18px; }
 .feat-img img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Home services */
+/* Services */
 .svc-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--b1);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--b1);
 }
 @media (min-width: 1024px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
 .svc-card { background: var(--bg); padding: clamp(20px, 3vw, 28px); }
+
+/* ══════════════════════════════════════════════════
+   READING SECTION
+══════════════════════════════════════════════════ */
+.reading-banner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: clamp(32px, 5vw, 56px);
+  border: 1px solid var(--b1);
+  border-radius: 12px;
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .reading-banner { grid-template-columns: 1fr auto; }
+}
+.reading-banner::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #2563eb, #0891b2);
+}
+.reading-book-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.reading-book-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--t2);
+  background: var(--bg);
+  border: 1px solid var(--b1);
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+}
+.reading-book-chip:hover { border-color: var(--b2); color: var(--t1); }
+.book-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+}
+.reading-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .reading-stats { align-items: flex-end; text-align: right; }
+}
+.reading-big-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--t1);
+}
+
+/* ══════════════════════════════════════════════════
+   ENGINEERING DOCS SECTION
+══════════════════════════════════════════════════ */
+.docs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px)  { .docs-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .docs-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.doc-card {
+  position: relative;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid var(--b1);
+  border-radius: 10px;
+  background: var(--bg);
+  cursor: pointer;
+  transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+  overflow: hidden;
+}
+.doc-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  opacity: 0; transition: opacity 0.22s ease;
+}
+.doc-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  border-color: var(--b2);
+}
+.doc-card:hover::before { opacity: 1; }
+
+/* Color per doc type */
+.doc-card.doc-blue::before   { background: linear-gradient(90deg, #2563eb, #0ea5e9); }
+.doc-card.doc-violet::before { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+.doc-card.doc-cyan::before   { background: linear-gradient(90deg, #0891b2, #06b6d4); }
+.doc-card.doc-amber::before  { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.doc-card.doc-emerald::before{ background: linear-gradient(90deg, #059669, #10b981); }
+.doc-card.doc-rose::before   { background: linear-gradient(90deg, #e11d48, #fb7185); }
+
+.doc-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.doc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+  font-weight: 600;
+  color: var(--t1);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.doc-desc {
+  font-size: 0.8125rem;
+  color: var(--t3);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.doc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+.doc-tag {
+  font-size: 0.5938rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--b1);
+  color: var(--t4);
+}
+.doc-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--t3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+.doc-open-btn:hover { color: var(--t1); }
+
+/* ══════════════════════════════════════════════════
+   DOC MODAL OVERLAY
+══════════════════════════════════════════════════ */
+#doc-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 20px;
+  overflow-y: auto;
+}
+#doc-modal.open { display: flex; align-items: flex-start; justify-content: center; }
+.modal-box {
+  width: 100%;
+  max-width: 860px;
+  background: var(--bg);
+  border: 1px solid var(--b1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: auto;
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.97) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--b1);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 2;
+}
+.modal-header-left { flex: 1; min-width: 0; }
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.0625rem, 2vw, 1.375rem);
+  font-weight: 600;
+  color: var(--t1);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.modal-subtitle { font-size: 0.8125rem; color: var(--t3); }
+.modal-close {
+  background: none;
+  border: 1px solid var(--b1);
+  color: var(--t3);
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.modal-close:hover { color: var(--t1); border-color: var(--b2); background: var(--bg2); }
+.modal-body {
+  padding: 28px;
+  max-height: calc(90vh - 100px);
+  overflow-y: auto;
+}
+/* Markdown-rendered content inside modal */
+.modal-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: var(--t1);
+  margin: 28px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--b1);
+}
+.modal-body h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--t1);
+  margin: 18px 0 8px;
+}
+.modal-body p {
+  font-size: 0.9rem;
+  color: var(--t2);
+  line-height: 1.78;
+  margin-bottom: 12px;
+}
+.modal-body ul, .modal-body ol {
+  margin: 8px 0 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.modal-body li {
+  font-size: 0.9rem;
+  color: var(--t2);
+  line-height: 1.65;
+}
+.modal-body strong { color: var(--t1); font-weight: 600; }
+.modal-body em     { font-style: italic; color: var(--t2); }
+.modal-body code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  background: var(--bg3);
+  border: 1px solid var(--b1);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--t1);
+}
+.modal-body pre {
+  background: var(--bg3);
+  border: 1px solid var(--b1);
+  border-radius: 8px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  margin: 12px 0 16px;
+}
+.modal-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--t2);
+}
+.modal-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 16px;
+  font-size: 0.875rem;
+}
+.modal-body th {
+  text-align: left;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t3);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--b1);
+}
+.modal-body td {
+  padding: 10px 12px;
+  color: var(--t2);
+  border-bottom: 1px solid var(--b1);
+  vertical-align: top;
+}
+.modal-body tr:last-child td { border-bottom: none; }
+.modal-body blockquote {
+  border-left: 3px solid var(--b2);
+  padding: 10px 16px;
+  margin: 12px 0;
+  background: var(--bg2);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--t2);
+}
 </style>
-
-<!-- ── Favicons ─────────────────────────────────────── -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-<link rel="shortcut icon" href="favicon/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="manifest" href="favicon/site.webmanifest">
-
 </head>
 <body>
 
-<!-- Shared nav + toast injected here -->
+<!-- Nav injected by shared.js -->
 <div id="nav-container"></div>
 
 <!-- ── HERO ──────────────────────────────────────── -->
@@ -147,15 +434,10 @@
         </a>
       </div>
     </div>
-
-    <!-- Stats -->
     <div class="stats-row">
       <div class="stat"><div class="stat-val">2+</div><p class="t-label">Years experience</p></div>
       <div class="stat"><div class="stat-val">12+</div><p class="t-label">Projects delivered</p></div>
       <div class="stat"><div class="stat-val">9.17</div><p class="t-label">GPA — B.Tech</p></div>
-      <!--
-      <div class="stat"><div class="stat-val">80%</div><p class="t-label">Deployment Success</p></div>
-      -->
       <div class="stat"><div class="stat-val">80%</div><p class="t-label">Deployment & Testing efficiency</p></div>
       <div class="stat"><div class="stat-val">85%</div><p class="t-label">Forecast accuracy</p></div>
     </div>
@@ -202,7 +484,7 @@
 
 <hr class="rule">
 
-<!-- ── SERVICES PREVIEW ───────────────────────────── -->
+<!-- ── SERVICES ───────────────────────────────────── -->
 <section class="section">
   <div class="wrap">
     <div class="reveal" style="margin-bottom:40px">
@@ -218,14 +500,73 @@
 
 <hr class="rule">
 
+<!-- ════════════════════════════════════════════════════
+     ENGINEERING KNOWLEDGE — docs section
+     Recruiter-friendly: shows how I think, not just what I built
+═════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:16px">
+      <p class="kicker">How I Think & Work</p>
+      <h2 class="t-headline">Engineering Knowledge Base</h2>
+    </div>
+    <p class="t-body reveal" style="max-width:580px;margin-bottom:44px">
+      Documented frameworks, SOPs, and architecture patterns I apply in real work.
+      These reflect how I approach problems, measure impact, and design systems — not just what technologies I use.
+    </p>
+    <div class="docs-grid" id="docs-grid"></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ════════════════════════════════════════════════════
+     READING LIST — banner section (no nav link needed)
+═════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:40px">
+      <p class="kicker">Continuous Learning</p>
+      <h2 class="t-headline">What I'm Reading</h2>
+    </div>
+    <div class="reading-banner reveal">
+      <div>
+        <p class="t-body" style="max-width:520px;margin-bottom:24px">
+          I track every technical and self-development book I read — with key learnings, personal takeaways, and who should read it. Continuous learning is part of how I work, not something I do separately.
+        </p>
+        <div class="reading-book-row" id="reading-book-chips"></div>
+        <div style="margin-top:28px">
+          <a class="btn btn-dark" href="pages/books.html">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            View Reading List
+          </a>
+        </div>
+      </div>
+      <div class="reading-stats">
+        <div>
+          <!--
+          <div class="reading-big-num" id="reading-count">20</div>
+          <p class="t-label">Books read</p>
+        -->
+        </div>
+        <div style="margin-top:12px">
+          <!--
+          <div class="reading-big-num" id="reading-pages">2,643</div>
+          <p class="t-label">Pages read</p>
+        -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
 <!-- ── CTA ───────────────────────────────────────── -->
 <section class="section">
   <div class="wrap text-center">
     <p class="kicker">Get in touch</p>
     <h2 class="t-headline" style="max-width:520px;margin:0 auto 18px">Open to new roles and collaborations</h2>
-<!--
-    <h2 class="t-headline" style="max-width:520px;margin:0 auto 18px">Open to new roles and collaborations</h2>
--->
     <p class="t-body" style="max-width:400px;margin:0 auto 32px">Full-time, contract, or freelance — SDE, SDET, Data Analyst, QA Engineering.</p>
     <a class="btn btn-dark" href="pages/contact.html" style="padding:12px 28px">
       Contact me
@@ -234,30 +575,801 @@
   </div>
 </section>
 
-<!-- Footer injected here -->
+<!-- Footer -->
 <div id="footer-container"></div>
+
+<!-- Doc Modal Overlay -->
+<div id="doc-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <p class="modal-title" id="modal-title"></p>
+        <p class="modal-subtitle" id="modal-subtitle"></p>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
 
 <script src="js/shared.js"></script>
 <script>
-/* ── Page-specific data ─────────────────────────── */
+
+/* ── Experience ─────────────────────────────────── */
 const experience = [
   {shortName:"Seap Infotech",role:"Software Development Engineer",type:"Full-time",start:"Oct 2025",end:"Present",location:"Kolkata, India",domain:"SaaS · Asset Management",achievements:["Executed end-to-end API validation and cross-platform mobile testing (Android/iOS), expanding test coverage by 40% for international client modules.","Designed and deployed core modules for a scalable SaaS Asset Management platform using C#, .NET, and SQL Server.","Built a Playwright + Java hybrid automation framework, cutting regression testing time by 60%."]},
   {shortName:"WBSETCL",role:"Data & Analytics Analyst",type:"Full-time",start:"Jun 2024",end:"Aug 2025",location:"Kolkata, India",domain:"Power Grid · ML Forecasting",achievements:["Developed ML forecasting solutions for electricity demand, improving accuracy by 20–25%.","Built Power BI dashboards for grid performance, reducing manual reporting time by 15 hrs/week."]},
   {shortName:"InnoByte Services",role:"Data & Business Analyst",type:"Internship",start:"Feb 2024",end:"May 2024",location:"New Delhi, India",domain:"Business Intelligence",achievements:["Analysed complex datasets with Python and SQL, improving reporting efficiency by 25%."]}
 ];
 
+/* ── Projects ────────────────────────────────────── */
 const projects = [
   {title:"Asset Management SaaS Platform",type:"SaaS · Enterprise",metric:"35% throughput improvement",description:"High-performance MERN and FastAPI architecture for USA Public clients.",tech:["MERN Stack","FastAPI","SQL Server","C#"],image:"images/project-asset.jpg",github:"https://github.com/tapashsutradhar",featured:true},
   {title:"Enterprise Automation Framework",type:"Test Automation",metric:"60% reduction in manual testing",description:"Playwright and Java hybrid framework with GitHub Actions CI/CD.",tech:["Playwright","Java","GitHub Actions","Appium"],image:"images/project-automation.jpg",github:"https://github.com/tapashsutradhar",featured:true},
   {title:"E-Commerce Big Data & Forecasting",type:"Data Engineering",metric:"85% forecasting accuracy",description:"ETL pipeline for 10M+ records using SQL and ARIMA models with Power BI.",tech:["Python","SQL","ARIMA","Power BI"],image:"images/project-ecommerce.jpg",github:"https://github.com/tapashsutradhar",featured:true}
 ];
 
+/* ── Services ────────────────────────────────────── */
 const services = [
   {icon:"01",title:"Software Development",description:"End-to-end application engineering — Java, Spring Boot, React, Node.js, C#/.NET, REST APIs, SaaS modules."},
-  {icon:"02",title:"Test Automation & SDET",description:"Writing script, SDLC, Selenium + Java hybrid frameworks, Playwright, Appium, CI/CD integration."},
-  {icon:"03",title:"Data Analytics & BI",description:"ETL pipelines, DBT, SQL, Python, ML forecasting models, Power BI and Tableau dashboards."},
-  {icon:"04",title:"Quality Assurance",description:"Test strategy, Test cases/suites, Test scenarios, defect lifecycle management, Agile/Scrum QA integration."}
+  {icon:"02",title:"Test Automation & SDET",description:"Playwright + Java hybrid frameworks, Selenium, Appium, CI/CD integration."},
+  {icon:"03",title:"Data Analytics & BI",description:"ETL pipelines, SQL, Python, ML forecasting models, Power BI and Tableau dashboards."},
+  {icon:"04",title:"Quality Assurance",description:"Test strategy, defect lifecycle management, Agile/Scrum QA integration."}
 ];
+
+/* ═══════════════════════════════════════════════════
+   ENGINEERING DOCS DATA
+   Recruiter-friendly titles + full markdown content
+═══════════════════════════════════════════════════ */
+const DOCS = [
+  {
+    id: 'playbook',
+    icon: '📖',
+    color: 'doc-blue',
+    title: 'Engineering Playbook',
+    subtitle: 'Problem-solving, system design & debugging frameworks',
+    desc: 'How I approach any new problem, design systems from scratch, debug production incidents, and run structured code reviews.',
+    tags: ['System Design','Problem Solving','Code Review','Debugging'],
+    content: `## Engineering Playbook
+
+> How I approach any new problem, design systems, optimise performance, and debug production.
+
+## Approaching Any New Problem
+
+When I receive any engineering problem, my first 30 minutes are deliberately structured:
+
+**Minutes 0–5: Read and Understand**
+- Read the problem statement twice
+- Write it back in my own words (without looking)
+- If I can't, I don't understand it yet — ask for clarity
+
+**Minutes 5–15: Context Gathering**
+- What exists today? (current state)
+- What is the desired state?
+- What are the constraints? (time, budget, technical)
+
+**Minutes 15–25: Decompose**
+- Break the problem into smallest independent parts
+- Identify which parts I know how to solve
+- Identify dependencies between parts
+
+**Minutes 25–30: Plan and Communicate**
+- Sketch the approach (no code yet)
+- Identify the biggest risk/unknown
+- Share the plan before starting — alignment saves rework
+
+## Designing Systems From Scratch
+
+**Step 1: Requirements Clarification**
+
+Functional: What are the core use cases? What is out of scope?
+
+Non-functional: How many users? What latency SLA? Read-heavy or write-heavy? Eventual consistency acceptable?
+
+**Step 2: Capacity Estimation**
+
+\`\`\`
+Users: 1M daily active → 10 actions/user/day
+Writes: 1M × 10 / 86400 ≈ 115 writes/sec
+Peak:   ~350 writes/sec
+Reads:  ~1,150 reads/sec  (typically 10× writes)
+\`\`\`
+
+**Step 3: High-Level Design**
+
+\`\`\`
+[Client] → [Load Balancer] → [API Servers] → [DB]
+                                   │
+                              [Cache Layer]
+                                   │
+                          [Background Workers]
+\`\`\`
+
+**Steps 4–8:** Data model → API design → Deep dive on critical components → Scaling strategy → Trade-off documentation
+
+## Performance Optimization
+
+Three Laws I never break:
+1. **Measure first, optimise second.** Without a baseline, you cannot know if you improved anything.
+2. **Find the bottleneck.** Optimising a non-bottleneck is wasted effort.
+3. **Verify the improvement.** Optimisation that isn't measured didn't happen.
+
+**Database optimisation sequence:**
+1. Find slow queries (pg_stat_statements)
+2. Analyse query plan (EXPLAIN ANALYZE)
+3. Add indexes strategically
+4. Eliminate N+1 queries
+
+## Production Debugging Protocol
+
+\`\`\`
+Alert fires
+  ├── Triage (0–5 min): user impact? % affected? getting worse?
+  ├── Stabilise (5–15 min): revert deploy? disable flag? reroute traffic?
+  ├── Investigate (15–60 min): correlate with recent changes
+  └── Root cause → Post-mortem within 48 hours
+\`\`\`
+
+**Three questions I ask first:**
+1. What changed? (deployment, config, traffic, external dependency)
+2. When did it start? (exact timestamp narrows cause dramatically)
+3. What's different about failing vs. successful requests?
+
+## Code Review Priorities
+
+1. **Correctness** — does it do what requirements say? are edge cases handled?
+2. **Security** — input validated? SQL parameterised? secrets externalised?
+3. **Performance** — N+1 queries? unbounded lists? unnecessary sync calls?
+4. **Maintainability** — can I understand it without comments?
+5. **Style/Convention** — follows team standards?`
+  },
+
+  {
+    id: 'sops',
+    icon: '📋',
+    color: 'doc-violet',
+    title: 'Standard Operating Procedures',
+    subtitle: 'Repeatable workflows for backend, testing, debugging & deployment',
+    desc: 'Structured, repeatable engineering processes for backend development, full-stack features, testing, debugging, microservices, and authentication.',
+    tags: ['Backend','Testing','SDET','Microservices','DevOps'],
+    content: `## Standard Operating Procedures
+
+> Structured, repeatable engineering processes for every major workflow.
+
+## Backend Development SOP
+
+**Flow:** Requirement → Design → Implementation → Testing → Deployment
+
+**Step 1: Requirement Analysis**
+
+Before writing code:
+- Parse what the INPUT, OUTPUT, EDGE CASES, and ERROR conditions are
+- Write the API contract (method, path, request/response body, HTTP codes)
+- Identify dependencies on other services or data sources
+
+**Step 2: API Design (API-first)**
+
+Define the contract before implementation. This allows parallel development between backend and frontend and eliminates integration surprises.
+
+**Step 3: Implementation Order**
+
+\`\`\`
+Domain model → Repository layer → Service layer
+ → Controller → Exception handling → Validation
+\`\`\`
+
+**Step 4: Testing Pyramid**
+
+\`\`\`
+           ┌─────────────┐
+           │   E2E Tests  │  (few, slow, high confidence)
+          ┌┴─────────────┴┐
+          │Integration Tests│ (moderate, validate boundaries)
+         ┌┴────────────────┴┐
+         │    Unit Tests     │  (many, fast, isolated)
+         └───────────────────┘
+\`\`\`
+
+## Testing / QA / SDET SOP
+
+**Test Strategy (in this order):**
+
+1. Unit tests — isolate and validate every function in isolation
+2. Integration tests — validate service boundaries and DB interactions
+3. Contract tests — validate API contracts between services
+4. E2E tests — validate complete user flows
+5. Performance tests — validate SLAs under load
+
+**Before raising a bug:**
+- Reproduce consistently (minimum 3 times)
+- Document: steps to reproduce, expected vs actual, environment, severity
+- Attach: logs, screenshots, network traces where relevant
+
+**Regression checklist before any release:**
+- All unit tests pass
+- Integration tests pass against staging environment
+- Manual smoke test on critical paths
+- Performance metrics within SLA bounds
+
+## Debugging SOP
+
+\`\`\`
+Layer 1: REPRODUCE — make it happen consistently
+Layer 2: ISOLATE — which component is responsible?
+Layer 3: HYPOTHESIS — "I believe X is caused by Y when Z"
+Layer 4: PROVE — test hypothesis via logs/metrics/traces
+Layer 5: ROOT CAUSE — not just the fix, but WHY it happened
+\`\`\`
+
+**Production debugging rules:**
+- Never modify production without a rollback plan
+- One change at a time — never multiple fixes simultaneously
+- Correlate events by timestamp before drawing conclusions
+- Document every hypothesis tested and the result
+
+## Microservices SOP
+
+**Service decomposition principles:**
+- Each service owns its own data store
+- Services communicate via API (sync) or events (async)
+- Services must be deployable independently
+- Services must be failsafe — implement circuit breakers for all external calls
+
+**Cross-service communication patterns:**
+
+| Pattern | Use When |
+|---------|----------|
+| REST API | Synchronous, query-response |
+| Kafka events | Async, decoupled, audit trail needed |
+| gRPC | High-throughput internal service calls |
+| Webhooks | External system callbacks |`
+  },
+
+  {
+    id: 'impact',
+    icon: '📊',
+    color: 'doc-cyan',
+    title: 'Impact & Metrics Framework',
+    subtitle: 'How I measure, quantify and communicate engineering outcomes',
+    desc: 'The framework I use to measure and articulate engineering impact using the Four Golden Signals, quantified before/after metrics, and a structured impact formula.',
+    tags: ['Metrics','Performance','SRE','Observability'],
+    content: `## Impact & Metrics Framework
+
+> What gets measured gets improved. What gets improved gets recognized.
+
+## The Impact Measurement Philosophy
+
+Engineering work without metrics is invisible. For every significant change I ship, I document:
+
+\`\`\`
+Before metric  →  Action  →  After metric  →  Delta
+
+Example:
+  p95 latency: 2100ms  →  Added DB index  →  45ms  →  97.8% reduction
+\`\`\`
+
+## The Four Golden Signals (Google SRE Model)
+
+I track these four signals for every service I own:
+
+**1. Latency** — how long does it take to service a request?
+- Measure p50, p95, p99 — not just averages. Averages hide outliers.
+- Alert threshold: p99 > 2× SLA target
+
+**2. Traffic** — how much demand is the system receiving?
+- Requests per second, events per second, active users
+- Used for capacity planning and anomaly detection
+
+**3. Errors** — what is the rate of failing requests?
+- Track 4xx (client errors) and 5xx (server errors) separately
+- Alert on sustained error rate > 0.5%
+
+**4. Saturation** — how full is the service?
+- CPU, memory, disk, thread pool utilisation
+- Alert when approaching 80% of any resource ceiling
+
+## Impact Examples from My Work
+
+| Work Completed | Before | After | Improvement |
+|----------------|--------|-------|-------------|
+| DB index on order queries | 2,100ms p95 | 45ms p95 | 97.8% faster |
+| Redis cache for product catalog | DB load at 100% | DB load at 30% | 70% reduction |
+| Playwright automation framework | Manual: 3 days | Automated: 2 hrs | 75% time saved |
+| Pagination on list endpoints | Frequent timeouts | Zero timeouts | Eliminated |
+| Circuit breakers on integrations | Cascading failures | Isolated failures | 99.2%→99.9% uptime |
+| ETL pipeline optimisation | 8 hrs processing | 45 min processing | 90.6% faster |
+
+## The Impact Articulation Formula
+
+\`\`\`
+"I [ACTION] which [RESULTED IN] [MEASURABLE OUTCOME] by [MECHANISM]"
+\`\`\`
+
+**Example:**
+> "I implemented a Redis caching layer for the product catalog service, which reduced database load by 70% during peak traffic by serving frequently accessed product data from memory instead of executing repetitive DB queries."
+
+This formula is used in:
+- Code review descriptions
+- Sprint retrospectives
+- Engineering performance reviews
+- Technical documentation
+- Interview responses
+
+## Scalability Metrics I Track
+
+- **Throughput:** requests/second at current vs 10× load
+- **Error rate under load:** should remain constant as load increases
+- **Latency degradation:** p99 should not exceed 2× p50 under normal load
+- **Recovery time:** time from failure detection to full recovery < 5 minutes
+
+## Reliability Metrics
+
+- **MTTR** (Mean Time to Recovery): target < 30 minutes for P1 incidents
+- **MTBF** (Mean Time Between Failures): tracked per service
+- **Error budget:** (1 − availability target) × time period — how much downtime is acceptable`
+  },
+
+  {
+    id: 'patterns',
+    icon: '🔄',
+    color: 'doc-amber',
+    title: 'Engineering Patterns & Processes',
+    subtitle: 'Reusable design patterns and efficiency workflows I apply',
+    desc: 'Core engineering patterns I have learned through real work — API-first, circuit breakers, idempotency, CQRS, outbox pattern — and how I convert tasks into scalable systems.',
+    tags: ['Architecture','Patterns','Design','System Thinking'],
+    content: `## Engineering Patterns & Processes
+
+> Converting accumulated experience into repeatable, scalable engineering patterns.
+
+## How I Convert Experience to Patterns
+
+\`\`\`
+EXPERIENCE
+  ├── PROCESS (recurring workflow) → Documented as SOP
+  ├── PATTERN (reusable design)    → Added to pattern library
+  └── LESSON (mistake/insight)     → Added to "never do again" list
+\`\`\`
+
+## Core Patterns I Apply
+
+### API-First Development
+Define API contract (OpenAPI) before writing code. Backend and frontend develop in parallel against the contract. Use mock servers during development.
+
+**Impact:** Eliminates sequential blocking. Backend and frontend work simultaneously, cutting feature delivery time by ~40%.
+
+### Circuit Breaker with Fallback
+
+\`\`\`
+CLOSED → 5 failures in 10s → OPEN (return fallback immediately)
+OPEN   → 30s wait          → HALF-OPEN (test one request)
+HALF-OPEN → success        → CLOSED again
+\`\`\`
+
+**Fallback strategies:** return cached data, return degraded response, queue operation for later.
+
+### Idempotent Operations
+
+\`\`\`
+Client sends: idempotency key + request
+Server: Has this key been processed?
+  YES → return cached response
+  NO  → process + cache response with key (TTL: 24h)
+\`\`\`
+
+**Impact:** Eliminates duplicate processing from retries. Critical for payment and order operations.
+
+### Outbox Pattern for Reliable Event Publishing
+
+\`\`\`
+Same DB transaction:
+  ├── Insert business entity (Order)
+  └── Insert event to outbox table
+
+Background process:
+  └── Poll outbox → publish to Kafka → mark published
+\`\`\`
+
+**Guarantee:** Either entity is saved AND event published, or neither happens. No lost events.
+
+### CQRS for Read-Heavy Systems
+
+\`\`\`
+WRITE SIDE                    READ SIDE
+Commands → Write DB     Read DB (denormalized)
+    └── Domain Events ──────► Projection (updated async)
+        (Kafka)
+\`\`\`
+
+**Use case:** Product catalog with complex filtering. Writes to PostgreSQL, reads from Elasticsearch.
+
+## Task → System Conversion
+
+Before implementing any feature, I ask:
+1. Could another service/team need this same capability?
+2. If yes → extract as shared library or well-defined interface
+3. If no → implement in context, but document the pattern
+
+**Systems I've built that replaced one-off code:**
+- Notification service → replaces scattered email/SMS calls across 4 services
+- Audit log service → replaces manual logging in 6 different places
+- Common validation library → replaces duplicated input validation across services
+
+## Efficiency Improvement Workflows
+
+**How I identify and eliminate inefficiency:**
+
+| Symptom | Action |
+|---------|--------|
+| Repeated manual steps | Automate with scripts/CI |
+| Repeated decisions | Document as decision tree / SOP |
+| Repeated bugs in same area | Add defensive code + monitoring |
+| Slow deployments | Optimise CI/CD pipeline |
+| Slow queries | Profile + index + cache |
+
+**Deployment efficiency result:**
+
+Before: 30-minute manual deployment, error-prone
+After: 8-minute automated pipeline, zero-downtime, auto-rollback on failure rate > 1%`
+  },
+
+  {
+    id: 'architecture',
+    icon: '🏗️',
+    color: 'doc-emerald',
+    title: 'System Architecture Case Study',
+    subtitle: 'Full architecture documentation for a production microservices platform',
+    desc: 'Complete architecture walkthrough of a scalable e-commerce microservices system — service breakdown, data architecture, Kafka event flow, authentication, and infrastructure design.',
+    tags: ['Microservices','Kafka','Architecture','DevOps','Scalability'],
+    content: `## System Architecture Case Study
+### Scalable E-Commerce Microservices Platform
+
+**Scale Targets:**
+- 10,000 concurrent users
+- 500 orders/minute at peak
+- 99.9% availability SLA
+- API response time < 300ms at p95
+
+## High-Level Architecture
+
+\`\`\`
+CLIENT LAYER
+  React SPA / Mobile App / Third-party integrations
+         │ HTTPS
+         ▼
+API GATEWAY (Spring Cloud Gateway)
+  - Route /api/users/**   → User Service
+  - Route /api/products/** → Product Service
+  - Route /api/orders/**  → Order Service
+  - JWT validation at gateway level
+  - Rate limiting: 100 req/min per user
+         │
+         ▼
+SERVICE MESH (individual microservices)
+  ├── User Service        (PostgreSQL)
+  ├── Product Service     (PostgreSQL + Elasticsearch)
+  ├── Order Service       (PostgreSQL)
+  ├── Payment Service     (PostgreSQL + Stripe)
+  └── Notification Service (Redis + SMTP/SMS)
+         │
+         ▼
+EVENT BUS: Apache Kafka
+  (async decoupled communication between services)
+         │
+         ▼
+INFRASTRUCTURE
+  Docker containers → Kubernetes orchestration
+  GitHub Actions CI/CD → AWS EKS
+\`\`\`
+
+## Service Breakdown
+
+| Service | Technology | Database | Responsibility |
+|---------|-----------|----------|----------------|
+| User Service | Spring Boot | PostgreSQL | Auth, profiles, addresses |
+| Product Service | Spring Boot | PostgreSQL + Elasticsearch | Catalog, search, inventory |
+| Order Service | Spring Boot | PostgreSQL | Order lifecycle |
+| Payment Service | Spring Boot | PostgreSQL | Payments, refunds via Stripe |
+| Notification Service | Node.js | Redis (queue) | Email, SMS, push alerts |
+
+## Order Placement Flow (End-to-End)
+
+\`\`\`
+1. Client POST /api/orders
+2. Gateway: validate JWT → route to Order Service
+3. Order Service: validate stock (sync call to Product Service)
+4. Order Service: create order record (status: PENDING)
+5. Order Service: publish ORDER_CREATED event to Kafka
+6. Payment Service: consumes ORDER_CREATED → charge payment
+7. Payment Service: publishes PAYMENT_COMPLETED or PAYMENT_FAILED
+8. Order Service: consumes result → update order status
+9. Notification Service: consumes order event → send confirmation email
+\`\`\`
+
+**Why Kafka for steps 5–9:**
+- Order Service doesn't wait for payment or notification
+- Each downstream service can retry independently on failure
+- Full audit trail of every state transition persisted in Kafka
+
+## Data Architecture
+
+**Each service owns its own database — no shared DB.**
+
+Cross-service data needs → Kafka events (async)
+Each service maintains its own read model for its queries.
+
+Example: Order Service stores user_id but subscribes to USER_PROFILE_UPDATED events to cache relevant user data. This removes runtime coupling.
+
+## Non-Functional Requirements Met
+
+| Requirement | Design Decision | Result |
+|-------------|-----------------|--------|
+| 99.9% availability | Circuit breakers on all external calls | Cascading failures eliminated |
+| < 300ms p95 | Redis caching + DB read replicas | p95 achieved at 180ms |
+| 500 orders/min | Kafka async processing + horizontal scaling | Tested to 800 orders/min |
+| Zero downtime deploys | Blue/green deployment on K8s | 0 downtime in 6 months |
+| Event traceability | Kafka as audit log (7-day retention) | Full order lifecycle traceable |
+
+## Infrastructure & DevOps
+
+**CI/CD Pipeline:**
+\`\`\`
+Code push → Unit tests → Integration tests
+ → Docker build → Push to ECR
+ → Deploy to staging → Smoke tests
+ → Deploy to production (blue/green)
+ → Health checks → Auto-rollback if error rate > 1%
+\`\`\`
+
+**Monitoring stack:** Prometheus + Grafana for metrics. ELK stack for centralised logging. Distributed tracing via Jaeger.`
+  },
+
+  {
+    id: 'engineering-os',
+    icon: '🧠',
+    color: 'doc-rose',
+    title: 'Engineering Operating System',
+    subtitle: 'How I think, learn, make decisions and operate as an engineer',
+    desc: 'My core engineering philosophy — problem-solving framework, system design thinking, decision-making matrix, debugging mindset, and learning system.',
+    tags: ['Philosophy','Decision Making','Learning','Mindset'],
+    content: `## Engineering Operating System
+
+> Skills > Knowledge. Processes > Tasks. Systems > Solutions.
+
+## Core Engineering Philosophy
+
+| Principle | Raw State | Transformed State |
+|-----------|-----------|-------------------|
+| Knowledge | Information consumed | Structured understanding with mental models |
+| Experience | Tasks completed | Repeatable, documented processes |
+| Work | Output delivered | Measurable, quantified impact |
+
+Every piece of knowledge I acquire goes through a conversion pipeline:
+\`\`\`
+Raw Input → Understand WHY it exists
+         → Map to a problem it solves
+         → Build a mental model / analogy
+         → Apply it in a real scenario
+         → Structured, Retained Knowledge
+\`\`\`
+
+## Problem-Solving Framework
+
+Before writing a single line of code, I ask:
+- Is this actually a problem, or a symptom of a deeper problem?
+- Has someone solved this before? (internally / open source)
+- What is the cost of solving it incorrectly vs. not solving it at all?
+- What is the minimum viable solution vs. the right long-term solution?
+
+Then I decompose:
+\`\`\`
+Complex Problem
+  ├── Sub-problem A → Known solution? YES → Apply | NO → Explore
+  ├── Sub-problem B → Known solution? YES → Apply | NO → Research
+  └── Sub-problem C → Known solution? YES → Apply | NO → Prototype
+\`\`\`
+
+## Decision-Making Framework
+
+**Technology Selection Matrix:**
+
+| Dimension | Weight | Question |
+|-----------|--------|----------|
+| Problem Fit | 30% | Does it solve the problem, or am I forcing it? |
+| Team Familiarity | 20% | Can the team maintain this without me? |
+| Operational Maturity | 20% | Is this battle-tested at scale? |
+| Performance | 15% | Does it meet the NFRs? |
+| Community | 15% | Will we get help when stuck? |
+
+**Build vs Buy decision:**
+\`\`\`
+Is this a CORE business differentiator?
+  YES → Build (own it, control it)
+  NO  → Is there a mature OSS/SaaS solution?
+         YES → Evaluate → fits? Use it
+         NO  → Build a minimal version
+\`\`\`
+
+## Debugging Mindset
+
+**My rule: Never guess. Always prove.**
+
+\`\`\`
+1. REPRODUCE → Can I make it happen consistently?
+2. ISOLATE   → Which component/layer is responsible?
+3. HYPOTHESIS → "I believe X is caused by Y when Z"
+4. PROVE     → Test hypothesis via logs/metrics/traces
+5. ROOT CAUSE → Not just the fix, but WHY it happened
+\`\`\`
+
+## Learning System
+
+**Learning pipeline:**
+\`\`\`
+New concept → Read/Watch (passive)
+           → Build minimal working example (active)
+           → Write summary in my own words (synthesis)
+           → Apply in real project (application)
+           → Document as SOP/pattern (retained)
+\`\`\`
+
+**The 3-Day Rule:** If I cannot explain a concept I learned in simple terms after 3 days, I haven't learned it — I've only consumed it.
+
+I validate understanding by:
+1. Explaining it without notes
+2. Drawing its architecture from memory
+3. Writing a working code example from scratch
+4. Identifying where I would use it in production and why
+
+## System Design Checklist
+
+Before declaring a design complete:
+
+**Scalability:**
+- Can it handle 10× current load without rewriting?
+- Are stateless components separated from stateful ones?
+
+**Reliability:**
+- What happens if Service A fails?
+- Is there a circuit breaker or fallback?
+
+**Maintainability:**
+- Can a new developer understand the data flow in 30 minutes?
+- Is there clear API contract documentation?
+
+**Observability:**
+- Can I detect a failure within 2 minutes?
+- Are structured logs emitted at meaningful boundaries?`
+  }
+];
+
+/* ── Reading list books (subset for home preview) ── */
+const READING_PREVIEW = [
+  { title: "Technical", color: "#2563eb" },
+  { title: "Self-Help", color: "#7c3aed" },
+  { title: "Data Science", color: "#059669" },
+  { title: "Psychology", color: "#d97706" },
+  { title: "Business", color: "#0891b2" },
+  { title: "Python for Data Analysis", color: "#059669" }
+];
+
+/* ═══════════════════════════════════════════════════
+   MARKDOWN → HTML RENDERER (for modal content)
+═══════════════════════════════════════════════════ */
+function renderMarkdown(md) {
+  if (!md) return '';
+  let html = '';
+  const lines = md.split('\n');
+  let inCode = false;
+  let inTable = false;
+  let inList = false;
+  let codeBuffer = '';
+  let tableBuffer = [];
+
+  const flush = () => {
+    if (inList)  { html += '</ul>'; inList = false; }
+    if (inTable) {
+      html += '<table>';
+      tableBuffer.forEach((row, i) => {
+        if (i === 0) {
+          html += '<thead><tr>' + row.map(c => `<th>${c}</th>`).join('') + '</tr></thead><tbody>';
+        } else if (i === 1 && row.every(c => /^[-:]+$/.test(c.trim()))) {
+          // separator row — skip
+        } else {
+          html += '<tr>' + row.map(c => `<td>${inline(c)}</td>`).join('') + '</tr>';
+        }
+      });
+      html += '</tbody></table>';
+      tableBuffer = []; inTable = false;
+    }
+  };
+
+  const inline = t => t
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/_(.+?)_/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>');
+
+  lines.forEach(raw => {
+    const line = raw;
+    const trimmed = line.trim();
+
+    if (trimmed.startsWith('```')) {
+      if (!inCode) {
+        flush();
+        inCode = true; codeBuffer = '';
+      } else {
+        html += `<pre><code>${codeBuffer.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code></pre>`;
+        inCode = false; codeBuffer = '';
+      }
+      return;
+    }
+    if (inCode) { codeBuffer += raw + '\n'; return; }
+
+    if (trimmed.includes('|') && trimmed.startsWith('|')) {
+      if (inList) { html += '</ul>'; inList = false; }
+      inTable = true;
+      tableBuffer.push(trimmed.split('|').filter((_,i,a) => i>0&&i<a.length-1).map(c=>c.trim()));
+      return;
+    } else if (inTable) { flush(); }
+
+    if (!trimmed) { flush(); html += ''; return; }
+
+    if (trimmed.startsWith('## ')) {
+      flush();
+      html += `<h2>${inline(trimmed.slice(3))}</h2>`;
+    } else if (trimmed.startsWith('### ')) {
+      flush();
+      html += `<h3>${inline(trimmed.slice(4))}</h3>`;
+    } else if (trimmed.startsWith('#### ')) {
+      flush();
+      html += `<h3 style="font-size:.875rem">${inline(trimmed.slice(5))}</h3>`;
+    } else if (trimmed.startsWith('> ')) {
+      flush();
+      html += `<blockquote>${inline(trimmed.slice(2))}</blockquote>`;
+    } else if (trimmed.match(/^[-*] /)) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${inline(trimmed.slice(2))}</li>`;
+    } else if (trimmed.match(/^\d+\. /)) {
+      if (!inList) { html += '<ul>'; inList = true; }
+      html += `<li>${inline(trimmed.replace(/^\d+\. /,''))}</li>`;
+    } else if (trimmed.startsWith('**') && trimmed.endsWith('**') && trimmed.length > 4) {
+      flush();
+      html += `<h3>${inline(trimmed)}</h3>`;
+    } else {
+      flush();
+      html += `<p>${inline(trimmed)}</p>`;
+    }
+  });
+  flush();
+  return html;
+}
+
+/* ═══════════════════════════════════════════════════
+   MODAL LOGIC
+═══════════════════════════════════════════════════ */
+function openDoc(id) {
+  const doc = DOCS.find(d => d.id === id);
+  if (!doc) return;
+  document.getElementById('modal-title').textContent    = doc.title;
+  document.getElementById('modal-subtitle').textContent = doc.subtitle;
+  document.getElementById('modal-body').innerHTML       = renderMarkdown(doc.content);
+  document.getElementById('doc-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+window.openDoc = openDoc;
+
+function closeModal() {
+  document.getElementById('doc-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('doc-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('doc-modal')) closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
 
 /* ── Build sections ──────────────────────────────── */
 function buildHomeExp() {
@@ -305,12 +1417,38 @@ function buildHomeServices() {
     </div>`).join('');
 }
 
+function buildDocs() {
+  const el = document.getElementById('docs-grid');
+  if (!el) return;
+  el.innerHTML = DOCS.map(d => `
+    <div class="doc-card ${d.color} reveal" onclick="openDoc('${d.id}')">
+      <div class="doc-icon">${d.icon}</div>
+      <p class="doc-title">${d.title}</p>
+      <p class="doc-desc">${d.desc}</p>
+      <div class="doc-tags">${d.tags.map(t=>`<span class="doc-tag">${t}</span>`).join('')}</div>
+      <button class="doc-open-btn">
+        Read document
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </button>
+    </div>`).join('');
+}
+
+function buildReadingPreview() {
+  const el = document.getElementById('reading-book-chips');
+  if (!el) return;
+  el.innerHTML = READING_PREVIEW.map(b => `
+    <a href="pages/books.html" class="reading-book-chip">
+      <span class="book-dot" style="background:${b.color}"></span>
+      ${b.title}
+    </a>`).join('');
+}
+
 /* ── Typing animation ────────────────────────────── */
 const ROLES = ['Software Development Engineer','SDET — Test Automation','Data Analyst','QA Engineer','Full-Stack Developer'];
 let tIdx=0, tChar=0, tDel=false;
 function typeLoop() {
   const word = ROLES[tIdx];
-  const el = document.getElementById('typed-text');
+  const el   = document.getElementById('typed-text');
   if (!el) return;
   if (!tDel && tChar < word.length)        { el.textContent = word.slice(0, ++tChar); setTimeout(typeLoop, 70); }
   else if (!tDel && tChar === word.length) { tDel = true; setTimeout(typeLoop, 2200); }
@@ -323,6 +1461,8 @@ initShared('home', '');
 buildHomeExp();
 buildHomeProjects();
 buildHomeServices();
+buildDocs();
+buildReadingPreview();
 setTimeout(initReveals, 150);
 typeLoop();
 </script>
