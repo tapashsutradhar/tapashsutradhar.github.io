@@ -294,6 +294,8 @@
 /* ── Expanded detail panel ───────────────────────────── */
 .book-detail {
   display: none;
+  /* ── padding: 0 clamp(20px, 3vw, 32px) clamp(20px, 3vw, 32px); 
+  padding: 0 12px 12px; ── */
   padding: 0 clamp(20px, 3vw, 32px) clamp(20px, 3vw, 32px);
   border-top: 1px solid var(--b1);
   animation: detailSlide 0.3s ease;
