@@ -1,0 +1,112 @@
+════════════════════════════════════════════════════════
+ INSTALLATION GUIDE
+ Books + Engineering Docs + Reading Section on Home
+════════════════════════════════════════════════════════
+
+FILES IN THIS PACKAGE:
+  index.html              → Replace your project root/index.html
+  books.html              → Replace your pages/books.html
+  books_additions.css     → APPEND to your css/books.css
+
+════════════════════════════════════════════════════════
+ STEP 1 — Replace index.html
+════════════════════════════════════════════════════════
+
+Copy index.html from this package into your project ROOT:
+
+  your-project/
+  └── index.html   ← replace this
+
+════════════════════════════════════════════════════════
+ STEP 2 — Replace books.html
+════════════════════════════════════════════════════════
+
+Copy books.html from this package into your pages folder:
+
+  your-project/
+  └── pages/
+      └── books.html   ← replace this
+
+════════════════════════════════════════════════════════
+ STEP 3 — Append books_additions.css to css/books.css
+════════════════════════════════════════════════════════
+
+Open  your-project/css/books.css
+Open  books_additions.css  (from this package)
+Copy everything from books_additions.css
+Paste it at the BOTTOM of css/books.css
+Save.
+
+════════════════════════════════════════════════════════
+ STEP 4 — Remove "books" from nav in shared.js
+════════════════════════════════════════════════════════
+
+Open  your-project/js/shared.js
+
+Find:
+  navPages: ['home','about','skills','experience',
+             'projects','services','education','books','contact']
+
+Change to:
+  navPages: ['home','about','skills','experience',
+             'projects','services','education','contact']
+
+Books is now accessed ONLY from the Reading section
+on the home page — not from the navbar.
+
+════════════════════════════════════════════════════════
+ WHAT YOU GET AFTER INSTALLING
+════════════════════════════════════════════════════════
+
+HOME PAGE — 2 new sections added:
+
+  1. "Engineering Knowledge Base" section
+     ─────────────────────────────────────
+     • 6 professional doc cards in a 3-column grid
+     • Each card opens a full modal popup with rich content
+     • Cards: Engineering Playbook, SOPs, Impact & Metrics,
+       Patterns & Processes, System Architecture Case Study,
+       Engineering Operating System
+     • Recruiters can read your thinking/process in depth
+     • Modal closes with × button, Escape key, or click outside
+
+  2. "What I'm Reading" section
+     ─────────────────────────────
+     • Shows your book count + pages read as large numbers
+     • Shows chips for each book title
+     • One "View Reading List" button → opens books page
+
+BOOKS PAGE — 3 improvements:
+
+  1. "Back to Portfolio" bar at the very top (above navbar)
+     • Left: ← Back to Portfolio link
+     • Center: "Reading List" label
+     • Right: Hire Me link
+
+  2. Two CTA buttons in page header:
+     • View Portfolio  ← Back to Portfolio
+     • Hire Me
+
+  3. Bottom CTA section:
+     • "Let's work together" heading
+     • View Portfolio + Contact Me + Download Resume buttons
+
+  4. Tabbed expanded review:
+     • Summary tab     — rich formatted fullSummary
+     • Key Highlights  — numbered list of learnings
+     • My Verdict      — who should read + personal take
+
+  5. Books NOT in navbar anymore — clean, focused nav
+
+════════════════════════════════════════════════════════
+ OPTIONAL: Update books count on home page
+════════════════════════════════════════════════════════
+
+In index.html, the reading stats are hardcoded:
+  <div class="reading-big-num" id="reading-count">6</div>
+  <div class="reading-big-num" id="reading-pages">2,643</div>
+
+When you add more books to books-data.js, update
+these two numbers in index.html manually to match.
+
+════════════════════════════════════════════════════════
