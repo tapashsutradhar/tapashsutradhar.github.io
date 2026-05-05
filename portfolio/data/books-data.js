@@ -35,6 +35,986 @@ const BOOKS = [
 
 
   {
+  id: 32,
+  title: "Surrounded by Narcissists",
+  author: "Thomas Erikson",
+  cover: "../images/books/surrounded-by-narcissists.jpg",
+  genre: "Psychology",
+  rating: 4,
+  dateRead: "2026-05",
+  pages: 304,
+  amazon: "",
+  summary: "This book explores narcissistic behavior, explaining how some individuals are driven by ego, validation, and self-importance. It helps identify these traits and shows how to manage interactions with such people.",
+  fullSummary: `## My Understanding of This Book
+      This book made me realize that narcissism is not rare—it exists in different levels in many people, including ourselves.
+
+      Before reading, I thought narcissists were extreme personalities.
+      But now I see it more as a spectrum:
+      - Some people need constant validation
+      - Some dominate conversations
+      - Some make everything about themselves
+
+      It’s more common than we think.
+
+      ## How I Started Noticing It
+      After reading, I began observing small behaviors:
+
+      - People shifting conversations back to themselves
+      - Needing recognition for everything they do
+      - Reacting strongly to criticism
+      - Wanting control in subtle ways
+
+      These are not always obvious, but once you see the pattern, it becomes clear.
+
+      ## The Core Behavior: Need for Validation
+      The biggest insight for me:
+
+      Narcissistic behavior is often driven by insecurity, not confidence.
+
+      On the surface:
+      - Confidence
+      - Dominance
+      - Control
+
+      Underneath:
+      - Need for attention
+      - Fear of being ignored
+      - Fragile self-image
+
+      This changes how you interpret people.
+
+      ## Emotional Impact on Others
+      Being around narcissistic behavior can feel:
+
+      - Draining
+      - Frustrating
+      - Unbalanced
+
+      Because:
+      - Conversations are one-sided
+      - Your needs are ignored
+      - Your perspective is minimized
+
+      Earlier, I might have taken it personally.
+      Now I see it as a pattern, not a personal attack.
+
+      ## How I Handle It Differently Now
+      One big shift:
+
+      I don’t try to “fix” or argue with such behavior anymore.
+
+      Instead:
+      - I set boundaries
+      - I don’t seek validation from them
+      - I stay emotionally neutral
+
+      This reduces unnecessary conflict.
+
+      ## The Hidden Lesson: Check Yourself Too
+      This book is not just about others.
+
+      It made me reflect:
+      - Where do I seek validation?
+      - Do I overvalue my own perspective?
+      - Do I react badly to criticism?
+
+      That self-check is uncomfortable but important.
+
+      ## Healthy vs Unhealthy Ego
+      Not all ego is bad:
+
+      - Healthy ego → confidence, self-respect
+      - Unhealthy ego → dominance, insecurity, control
+
+      The difference is awareness and balance.
+
+      ## Practical Shift in My Thinking
+      After reading this:
+
+      - I observe ego in conversations
+      - I react less emotionally
+      - I protect my energy better
+
+      I don’t try to win every interaction anymore.
+
+      ## Final Thought
+      Understanding narcissistic behavior helps you avoid unnecessary emotional drain and interact more strategically with people.`,
+  keyLearnings: [
+    "Narcissism exists on a spectrum",
+    "Many ego-driven behaviors come from insecurity",
+    "Do not take narcissistic behavior personally",
+    "Setting boundaries is more effective than arguing",
+    "Self-awareness helps control your own ego",
+    "Not all ego is bad—balance is key",
+    "Protecting your energy is important in relationships",
+    "What looks like confidence is often a mask for insecurity.",
+  ],
+  whoShouldRead: "Anyone dealing with difficult personalities or wanting to understand ego-driven behavior.",
+  myTake: "Very relatable. It makes you more aware of both others and yourself."
+},
+
+  {
+  id: 31,
+  title: "Surrounded by Psychopaths",
+  author: "Thomas Erikson",
+  cover: "../images/books/surrounded-by-psychopaths.jpg",
+  genre: "Psychology",
+  rating: 4,
+  dateRead: "2026-05",
+  pages: 272,
+  amazon: "",
+  summary: "This book explores manipulative behavior and how certain individuals use psychological tactics to control others. It builds on personality types to help identify, understand, and protect yourself from manipulation.",
+  fullSummary: `## My Understanding of This Book
+      This book made me realize something uncomfortable but real:
+
+      Not everyone around you communicates honestly.
+      Some people influence, control, and manipulate—sometimes subtly, sometimes intentionally.
+
+      Earlier, I used to think manipulation meant something extreme or obvious.
+      But this book shows that manipulation often looks normal—conversations, persuasion, emotional reactions—but underneath, there can be control.
+
+      ## How I See People Differently Now
+      The book builds on personality types (like RED, BLUE, GREEN, YELLOW),
+      but what stood out to me is how different personalities react differently to pressure.
+
+      I started noticing:
+      - Some people push aggressively
+      - Some play emotional games
+      - Some avoid conflict but get influenced easily
+
+      It made me more aware that communication is not neutral—people bring intention into it.
+
+      ## What Manipulation Actually Looks Like
+      The biggest shift for me was understanding that manipulation is rarely direct.
+
+      It can look like:
+      - Making you feel guilty
+      - Twisting facts slightly
+      - Creating urgency or pressure
+      - Acting like a victim to control your response
+
+      Before, I might have reacted emotionally.
+      Now, I try to pause and ask:
+      → "What is actually happening here?"
+
+      ## Awareness is the First Defense
+      One thing I clearly learned:
+      You don’t need to fight manipulation—you need to recognize it.
+
+      Once you see it:
+      - You don’t react instantly
+      - You don’t get pulled emotionally
+      - You make more conscious decisions
+
+      This alone changes the dynamic.
+
+      ## Emotional Control
+      This book also connects with emotional discipline.
+
+      Manipulation works best when:
+      - You react quickly
+      - You get emotional
+      - You seek approval
+
+      So controlling your response becomes your biggest strength.
+
+      ## Not Everyone is a Psychopath
+      Important realization:
+
+      The title is extreme, but not everyone is a psychopath.
+
+      However:
+      - Some people use manipulative behaviors occasionally
+      - Some do it consistently
+
+      The goal is not paranoia—but awareness.
+
+      ## Practical Shift in My Thinking
+      After reading this, I became more:
+      - Observant in conversations
+      - Careful with emotional reactions
+      - Aware of influence tactics
+
+      I don’t blindly trust tone or words anymore—I look at patterns.
+
+      ## Final Thought
+      This book is less about labeling others and more about protecting your mental space.
+
+      Once you understand how influence works, you stop being easily controlled and start responding more consciously.`,
+  keyLearnings: [
+    "Manipulation is often subtle, not obvious",
+    "Emotional reactions make you easier to influence",
+    "Awareness is the best defense against manipulation",
+    "People communicate with hidden intentions sometimes",
+    "Different personalities react differently under pressure",
+    "Observing patterns is more important than listening to words",
+    "Staying calm gives you control in difficult interactions",
+    "Not everyone is a manipulator, but many people use manipulative tactics at times.",
+    "The most dangerous manipulation is the one you don’t notice.",
+  ],
+  whoShouldRead: "Anyone who wants to understand influence, protect themselves from manipulation, and improve emotional awareness.",
+  myTake: "Eye-opening in a practical way. Not too heavy, but it changes how you see everyday interactions."
+},
+
+  {
+  id: 30,
+  title: "The Laws of Human Nature",
+  author: "Robert Greene",
+  cover: "../images/books/the-laws-of-human-nature.jpg",
+  genre: "Psychology",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 624,
+  amazon: "",
+  summary: "A deep exploration of human behavior, emotions, and motivations. Robert Greene explains why people act the way they do and how understanding these patterns can help you navigate relationships, power, and self-awareness.",
+  fullSummary: `## The Core Idea: Understand People to Master Life
+      This book is built on one central truth:
+
+      → Most people do not understand themselves.
+      → And because of that, they misunderstand others.
+
+      Robert Greene argues that human behavior is driven less by logic and more by hidden emotions, unconscious patterns, and deep psychological needs.
+
+      If you learn to see these patterns clearly, you gain a massive advantage in life, relationships, and work.
+
+      ## The Story Behind the Book
+      Greene draws from:
+      - Historical figures (Napoleon, Abraham Lincoln, etc.)
+      - Psychology
+      - Real-life behavioral patterns
+
+      Each chapter introduces a "law" of human behavior—patterns that repeat across time and people.
+
+      ## The Emotional Nature of Humans
+      One of the strongest ideas:
+
+      Humans believe they are rational,
+      but in reality, they are deeply emotional.
+
+      Decisions are often:
+      - Driven by ego
+      - Influenced by insecurity
+      - Justified later with logic
+
+      Understanding this changes how you interpret actions.
+
+      ## Self-Awareness: The First Step
+      Before understanding others, you must understand yourself.
+
+      Greene emphasizes:
+      - You also have biases
+      - You also act emotionally
+      - You also have blind spots
+
+      Without self-awareness, you will misjudge others.
+
+      ## The Law of Irrationality
+      People:
+      - Overreact emotionally
+      - Take things personally
+      - Make impulsive decisions
+
+      The key skill:
+      → Stay calm while others are emotional
+
+      This alone gives you an advantage.
+
+      ## The Law of Narcissism
+      Everyone has some level of narcissism:
+
+      - Desire for attention
+      - Need for validation
+      - Sensitivity to criticism
+
+      Instead of fighting it:
+      - Understand it
+      - Use empathy to connect with people
+
+      ## The Law of Role-Playing
+      People wear masks:
+
+      - They present a version of themselves
+      - They hide insecurities and intentions
+
+      The real skill is:
+      → Seeing beyond the surface
+
+      Observe:
+      - Actions, not words
+      - Patterns, not moments
+
+      ## The Law of Envy
+      Envy is one of the most hidden emotions:
+
+      - People rarely admit it
+      - It shows through behavior
+
+      Signs include:
+      - Subtle criticism
+      - Passive negativity
+      - Hidden resentment
+
+      Recognizing envy helps you avoid toxic dynamics.
+
+      ## The Law of Grandiosity
+      People often:
+      - Overestimate their importance
+      - Believe they are special
+
+      This leads to:
+      - Poor decisions
+      - Ignoring reality
+
+      The solution:
+      → Stay grounded in reality
+
+      ## The Law of Aggression
+      Aggression is often indirect:
+
+      - Passive-aggressive behavior
+      - Hidden hostility
+      - Manipulation
+
+      Not all aggression is obvious.
+
+      ## The Law of Short-Sightedness
+      Humans focus on:
+      - Immediate rewards
+      - Short-term gains
+
+      And ignore:
+      - Long-term consequences
+
+      Wise people think long-term.
+
+      ## The Practical Application
+      This book is not about manipulation—it’s about clarity.
+
+      When you understand human nature:
+      - You stop taking things personally
+      - You read situations better
+      - You respond, not react
+
+      ## Final Thought
+      The more clearly you see human nature—both in yourself and others—the more control you have over your decisions, relationships, and life direction.`,
+  keyLearnings: [
+    "People are driven more by emotion than logic",
+    "Self-awareness is the foundation of understanding others",
+    "Most people wear social masks",
+    "Envy and ego influence behavior more than we admit",
+    "Staying calm gives you an advantage in emotional situations",
+    "Observe patterns, not just words",
+    "Understanding human nature improves decision-making",
+    "People rarely say what they think or feel, but they are constantly revealing it through their actions.",
+  ],
+  whoShouldRead: "Anyone who wants to understand people deeply—leaders, professionals, and those navigating complex relationships.",
+  myTake: "Heavy but powerful. It makes you see people—and yourself—much more clearly, sometimes uncomfortably so."
+},
+
+{
+  id: 29,
+  title: "Think Again: The Power of Knowing What You Don't Know",
+  author: "Adam Grant",
+  cover: "../images/books/think-again.jpg",
+  genre: "Psychology",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 320,
+  amazon: "",
+  summary: "This book explores the importance of rethinking and unlearning in a rapidly changing world. Adam Grant argues that intelligence is not just about knowledge, but about the ability to question beliefs, update opinions, and stay flexible.",
+  fullSummary: `## The Core Idea: Intelligence = Rethinking
+      Most people think intelligence is about:
+      - Knowing more
+      - Being right
+
+      But this book argues:
+      → True intelligence is the ability to **change your mind**
+
+      ## The Three Thinking Modes
+      People often fall into these mental roles:
+
+      - <b>Preacher:</b> Defending beliefs
+      - <b>Prosecutor:</b> Attacking others’ ideas
+      - <b>Politician:</b> Seeking approval
+
+      These modes block learning.
+
+      The ideal mode:
+      - <b>Scientist:</b> Testing ideas, updating beliefs
+
+      ## The Danger of Being Right
+      When you feel certain:
+      - You stop questioning
+      - You ignore new evidence
+      - You become rigid
+
+      Confidence without doubt leads to poor decisions.
+
+      ## Rethinking and Unlearning
+      Learning is not enough:
+
+      - You must unlearn outdated beliefs
+      - Update your thinking regularly
+      - Stay mentally flexible
+
+      ## The Power of Doubt
+      Doubt is not weakness:
+
+      - It encourages curiosity
+      - It opens learning
+      - It improves decisions
+
+      ## Challenging Others Effectively
+      To change minds:
+
+      - Ask questions, don’t argue
+      - Show understanding
+      - Let others discover gaps themselves
+
+      ## Psychological Safety
+      In teams:
+
+      - People must feel safe to admit mistakes
+      - Encourage questioning
+      - Reward learning, not just correctness
+
+      ## Knowing What You Don't Know
+      Overconfidence is dangerous:
+
+      - We often overestimate our knowledge
+      - Recognizing limits improves thinking
+
+      ## Final Thought
+      Progress depends not on what you know, but on your ability to rethink what you know.`,
+  keyLearnings: [
+    "Rethinking is a core skill of intelligence",
+    "Act like a scientist, not a preacher or prosecutor",
+    "Doubt improves decision-making",
+    "Unlearning is as important as learning",
+    "Ask questions instead of arguing",
+    "Overconfidence leads to poor thinking",
+    "Flexibility is key in a changing world",
+    "Intelligence is not just the ability to think; it’s the ability to rethink.",
+  ],
+  whoShouldRead: "Anyone who wants to think better, learn faster, and make smarter decisions.",
+  myTake: "Very relevant today. It teaches you how to think, not just what to think."
+},
+
+{
+  id: 28,
+  title: "Mindset: The New Psychology of Success",
+  author: "Carol S. Dweck",
+  cover: "../images/books/mindset.jpg",
+  genre: "Psychology",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 320,
+  amazon: "",
+  summary: "This book explains how our beliefs about our abilities shape our success. It introduces the concept of fixed vs growth mindset and shows how adopting a growth mindset leads to learning, resilience, and long-term achievement.",
+  fullSummary: `## The Core Idea: Your Beliefs Shape Your Life
+      The book introduces a simple but powerful idea:
+
+      - <b>Fixed Mindset:</b> Belief that abilities are static
+      - <b>Growth Mindset:</b> Belief that abilities can be developed
+
+      This belief affects everything—learning, success, relationships, and failure.
+
+      ## Fixed Mindset
+      People with a fixed mindset:
+
+      - Avoid challenges
+      - Fear failure
+      - Give up easily
+      - See effort as useless
+      - Feel threatened by others’ success
+
+      Their goal is to look smart, not to grow.
+
+      ## Growth Mindset
+      People with a growth mindset:
+
+      - Embrace challenges
+      - Persist through difficulties
+      - See effort as the path to mastery
+      - Learn from criticism
+      - Find inspiration in others’ success
+
+      Their goal is continuous improvement.
+
+      ## The Power of "Not Yet"
+      Instead of saying:
+      - "I can’t do this"
+
+      Growth mindset says:
+      - "I can’t do this <b>yet</b>"
+
+      This small shift changes behavior and outcomes.
+
+      ## Failure as Feedback
+      In a growth mindset:
+
+      - Failure is not identity
+      - It is information
+      - It shows what to improve
+
+      ## Impact on Life Areas
+
+      ### Education
+      Students improve when praised for effort, not intelligence.
+
+      ### Work
+      Growth mindset teams:
+      - Take risks
+      - Innovate more
+      - Learn faster
+
+      ### Relationships
+      - Fixed mindset expects perfection
+      - Growth mindset works through problems
+
+      ## How to Build a Growth Mindset
+      - Notice fixed mindset thoughts
+      - Reframe challenges as learning
+      - Focus on effort and progress
+      - Embrace feedback
+
+      ## Final Thought
+      Talent alone is not enough—growth comes from effort, learning, and persistence.`,
+  keyLearnings: [
+    "Beliefs about ability shape success",
+    "Growth mindset leads to continuous improvement",
+    "Failure is feedback, not identity",
+    "Effort is essential for mastery",
+    "Challenges are opportunities to grow",
+    "Mindset affects learning, work, and relationships",
+    "The word 'yet' can change your mindset and outcomes",
+    "Becoming is better than being.",
+  ],
+  whoShouldRead: "Students, professionals, and anyone aiming for long-term growth.",
+  myTake: "Simple but powerful. It completely changes how you view failure and learning."
+},
+
+  {
+  id: 27,
+  title: "Man’s Search for Meaning",
+  author: "Viktor E. Frankl",
+  cover: "../images/books/mans-search-for-meaning.jpg",
+  genre: "Psychology",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 184,
+  amazon: "",
+  summary: "A profound exploration of human resilience based on Viktor Frankl’s experiences in Nazi concentration camps. The book explains how meaning—not pleasure or power—is the primary driving force in human life.",
+  fullSummary: `## The Story: Life in Concentration Camps
+      Viktor Frankl, a psychiatrist, was imprisoned in Nazi concentration camps during World War II.
+
+      He observed:
+      - Extreme suffering
+      - Loss of family, identity, dignity
+      - People reduced to survival conditions
+
+      Yet, even in these conditions, some people survived mentally and spiritually.
+
+      ## The Core Question
+      Why do some people survive suffering while others collapse?
+
+      Frankl’s answer:
+      → Those who found **meaning** in life were more likely to survive.
+
+      ## Logotherapy (Frankl’s Theory)
+      Frankl introduces **Logotherapy**, which states:
+
+      - The primary human drive is not pleasure (Freud)
+      - Not power (Adler)
+      - But **meaning**
+
+      ## Three Sources of Meaning
+      Meaning can come from:
+
+      1. <b>Work or Creation</b>
+         - Doing something meaningful
+         - Creating value
+
+      2. <b>Love</b>
+         - Caring deeply for someone
+         - Even imagining loved ones gives strength
+
+      3. <b>Suffering</b>
+         - Finding purpose in pain
+         - Choosing your attitude in unavoidable suffering
+
+      ## Freedom of Attitude
+      One of the most powerful ideas:
+
+      Even when everything is taken away:
+      - You still have the freedom to choose your response
+
+      This inner freedom defines your humanity.
+
+      ## The Psychological Insight
+      People who:
+      - Had a reason to live
+      - Had hope or purpose
+
+      Were more resilient than those who lost meaning.
+
+      ## Modern Application
+      The book applies beyond extreme suffering:
+
+      - Career struggles
+      - Failure
+      - Anxiety
+
+      Meaning gives direction and strength.
+
+      ## Final Thought
+      Life is not about avoiding suffering—it is about finding meaning in it.`,
+  keyLearnings: [
+    "Meaning is the primary driver of human life",
+    "Suffering can have purpose if you choose it",
+    "You always have control over your attitude",
+    "Hope and purpose increase resilience",
+    "Life asks questions—you answer through your actions",
+    "When we are no longer able to change a situation, we are challenged to change ourselves.",
+    "Quote: He who has a why to live can bear almost any how.",
+  ],
+  whoShouldRead: "Anyone dealing with uncertainty, struggle, or searching for purpose.",
+  myTake: "Deeply powerful. It changes how you see suffering and purpose in life."
+},
+
+{
+  id: 26,
+  title: "Zero to One: Notes on Startups, or How to Build the Future",
+  author: "Peter Thiel, Blake Masters",
+  cover: "../images/books/zero-to-one.jpg",
+  genre: "Business",
+  rating: 5,
+  dateRead: "2026-04",
+  pages: 224,
+  amazon: "",
+  summary: "This book explores how to build truly innovative companies that create new things rather than competing in existing markets. Peter Thiel argues that real progress comes from going from 'zero to one'—creating something entirely new—rather than copying or improving existing ideas.",
+  fullSummary: `## The Core Idea: From Zero to One
+      The central concept is simple but powerful:
+
+      - <b>0 → 1:</b> Creating something entirely new (innovation)
+      - <b>1 → n:</b> Copying or scaling existing ideas (globalization)
+
+      True value comes from going from zero to one—building something unique.
+
+      ## Competition is for Losers
+      Contrary to popular belief, Thiel argues:
+
+      - Competition destroys profits
+      - It forces companies into price wars
+      - It limits innovation
+
+      The goal is not to compete—but to create a **monopoly through uniqueness**.
+
+      ## Monopoly vs Competition
+      Great companies:
+
+      - Dominate a niche market
+      - Offer something no one else can
+      - Expand from a strong position
+
+      Weak companies:
+      - Compete in crowded markets
+      - Focus on incremental improvements
+
+      ## Start Small, Then Expand
+      Successful startups:
+
+      - Begin with a small, specific market
+      - Dominate that niche
+      - Gradually expand into larger markets
+
+      This builds a strong foundation.
+
+      ## The Importance of Secrets
+      Every great business is built on a “secret”:
+
+      - Something others do not see or believe
+      - A unique insight about the world
+
+      Founders must ask:
+      - What important truth do few people agree with me on?
+
+      ## Definite Optimism
+      Thiel distinguishes between:
+
+      - <b>Definite Optimism:</b> Believing the future can be planned and built
+      - <b>Indefinite Optimism:</b> Believing the future will improve without a plan
+
+      Great founders are definite optimists—they actively build the future.
+
+      ## Product and Technology
+      Strong technology companies:
+
+      - Have a 10x advantage over competitors
+      - Solve problems in a fundamentally better way
+      - Create defensible advantages
+
+      ## Founders and Teams
+      Key ideas:
+
+      - Strong founding teams are critical
+      - Ownership matters (equity alignment)
+      - Early decisions shape long-term success
+
+      ## Sales and Distribution
+      Even great products fail without distribution:
+
+      - Sales is as important as product
+      - You must reach customers effectively
+      - Growth requires strong distribution channels
+
+      ## Final Thought
+      The future is not something that happens—it is something we build. The most successful companies create new categories instead of competing in existing ones.`,
+  keyLearnings: [
+    "True innovation comes from creating something new, not copying",
+    "Avoid competition by building unique products",
+    "Start with a niche and dominate it",
+    "Every successful business is based on a unique insight (secret)",
+    "Technology should provide a 10x advantage",
+    "Sales and distribution are critical for success",
+    "The future is built by those who plan and act"
+  ],
+  whoShouldRead: "Startup founders, entrepreneurs, and anyone interested in innovation and building unique businesses.",
+  myTake: "A mindset-shifting book. It challenges conventional thinking and pushes you to think bigger and differently about innovation."
+},
+
+{
+  id: 25,
+  title: "High Output Management",
+  author: "Andrew Grove",
+  cover: "../images/books/high-output-management.jpg",
+  genre: "Leadership",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 272,
+  amazon: "",
+  summary: "A practical guide to management focused on maximizing output through effective systems, processes, and team leadership.",
+  fullSummary: `## The Core Idea: Output is What Matters
+      A manager’s job is to increase team output.
+
+      ## Manager as a System
+      Managers design systems that produce results.
+
+      ## Leverage
+      High-leverage activities:
+      - Decision making
+      - Coaching
+      - Process improvement
+
+      ## Meetings
+      Meetings are tools:
+      - One-on-ones
+      - Staff meetings
+      - Decision meetings
+
+      ## Performance
+      Measure output—not activity.
+
+      ## Final Thought
+      Good management multiplies team performance.`,
+  keyLearnings: [
+    "Manager output equals team output",
+    "Focus on high-leverage activities",
+    "Systems drive performance",
+    "Meetings should be purposeful",
+    "Measure results, not effort"
+  ],
+  whoShouldRead: "Managers and team leaders.",
+  myTake: "Extremely practical. One of the best books on real management."
+},
+
+{
+  id: 24,
+  title: "Team Topologies",
+  author: "Matthew Skelton, Manuel Pais",
+  cover: "../images/books/team-topologies.jpg",
+  genre: "Technical",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 240,
+  amazon: "",
+  summary: "A guide to designing team structures that enable fast software delivery and better flow. It explains how team organization impacts system performance.",
+  fullSummary: `## The Core Idea: Team Structure Impacts Delivery
+      How teams are organized affects how software is built.
+
+      ## Four Team Types
+      - Stream-aligned teams
+      - Platform teams
+      - Enabling teams
+      - Complicated subsystem teams
+
+      ## Conway’s Law
+      System design reflects team communication structure.
+
+      ## Flow of Work
+      Teams should be designed to:
+      - Reduce dependencies
+      - Improve speed
+      - Increase ownership
+
+      ## Interaction Modes
+      - Collaboration
+      - X-as-a-service
+      - Facilitating
+
+      ## Final Thought
+      Optimize team structure to improve system performance.`,
+  keyLearnings: [
+    "Team structure affects system design",
+    "Reduce dependencies between teams",
+    "Design teams for fast flow",
+    "Use clear interaction models",
+    "Ownership improves outcomes"
+  ],
+  whoShouldRead: "Engineering leaders, architects, and DevOps teams.",
+  myTake: "Advanced but very important for scaling teams and systems."
+},
+
+{
+  id: 23,
+  title: "Measure What Matters",
+  author: "John Doerr",
+  cover: "../images/books/measure-what-matters.jpg",
+  genre: "Business",
+  rating: 4,
+  dateRead: "2026-05",
+  pages: 320,
+  amazon: "",
+  summary: "A guide to using OKRs (Objectives and Key Results) to set goals, track progress, and align teams with measurable outcomes.",
+  fullSummary: `## The Core Idea: Focus with OKRs
+      OKRs help organizations focus on what matters.
+
+      ## Objectives
+      - Clear, qualitative goals
+
+      ## Key Results
+      - Measurable outcomes
+      - Track progress
+
+      ## Alignment
+      - Teams align around shared goals
+      - Transparency improves execution
+
+      ## Execution
+      - Regular tracking
+      - Adjust based on results
+
+      ## Final Thought
+      What you measure drives behavior.`,
+  keyLearnings: [
+    "Set clear and measurable goals",
+    "Align teams using OKRs",
+    "Track progress regularly",
+    "Focus improves execution",
+    "Measurement drives results"
+  ],
+  whoShouldRead: "Leaders, managers, and teams working toward measurable goals.",
+  myTake: "Simple framework but very powerful when applied correctly."
+},
+
+{
+  id: 22,
+  title: "The Mom Test",
+  author: "Rob Fitzpatrick",
+  cover: "../images/books/the-mom-test.jpg",
+  genre: "Business",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 136,
+  amazon: "",
+  summary: "A practical guide on how to talk to customers and validate ideas without getting misleading feedback. It teaches how to ask the right questions and avoid false validation.",
+  fullSummary: `## The Core Idea: Ask Better Questions
+      People often lie (even unintentionally) when asked about ideas.
+
+      The goal is to:
+      - Avoid opinions
+      - Focus on real behavior
+
+      ## The Mom Test Principle
+      Even your mom will lie to avoid hurting you.
+
+      So:
+      - Do not ask “Would you use this?”
+      - Ask about past behavior
+
+      ## Good Questions
+      - What are you doing now?
+      - What problems do you face?
+      - How are you solving them?
+
+      ## Bad Questions
+      - Do you like this idea?
+      - Would you buy this?
+
+      ## Final Thought
+      Real insights come from behavior—not opinions.`,
+  keyLearnings: [
+    "Avoid asking opinion-based questions",
+    "Focus on real user behavior",
+    "Bad questions lead to false validation",
+    "Customer interviews must be structured",
+    "Validation requires evidence, not praise"
+  ],
+  whoShouldRead: "Startup founders and product builders validating ideas.",
+  myTake: "Short but extremely powerful. Fixes one of the biggest mistakes in startups."
+},
+
+{
+  id: 21,
+  title: "Escaping the Build Trap",
+  author: "Melissa Perri",
+  cover: "../images/books/escaping-the-build-trap.jpg",
+  genre: "Business",
+  rating: 5,
+  dateRead: "2026-05",
+  pages: 208,
+  amazon: "",
+  summary: "This book explains why many companies fall into the trap of continuously building features without delivering real value. It emphasizes outcome-driven product management and aligning teams with business goals.",
+  fullSummary: `## The Core Idea: Outcomes Over Output
+      Many teams focus on shipping features instead of solving problems.
+
+      The “build trap” is when:
+      - Success is measured by output
+      - Not by customer or business impact
+
+      ## Product vs Feature Teams
+      - Feature teams: build what they are told
+      - Product teams: solve customer problems
+
+      Strong teams focus on outcomes.
+
+      ## Product Strategy
+      Strategy connects vision to execution:
+
+      - Define clear goals
+      - Focus on customer value
+      - Align teams around outcomes
+
+      ## Continuous Discovery
+      Teams must:
+      - Talk to customers
+      - Test ideas
+      - Iterate constantly
+
+      ## Final Thought
+      Building more does not mean building better—value is what matters.`,
+  keyLearnings: [
+    "Focus on outcomes, not output",
+    "Avoid becoming a feature factory",
+    "Strong product strategy is essential",
+    "Teams should solve problems, not just build features",
+    "Customer value drives success"
+  ],
+  whoShouldRead: "Product managers, founders, and teams building digital products.",
+  myTake: "Sharp and practical. It fixes a very common mistake in product teams."
+},
+
+  {
   id: 20,
   title: "Python for Data Analysis",
   author: "Wes McKinney",
