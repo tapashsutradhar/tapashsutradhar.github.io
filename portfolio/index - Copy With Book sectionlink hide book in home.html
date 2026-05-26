@@ -465,25 +465,6 @@
 
 <hr class="rule">
 
-<!-- ── EDUCATION QUALIFICATIONS ──────────────────────────── -->
-<section class="section">
-  <div class="wrap">
-    <div class="reveal" style="margin-bottom:40px">
-      <p class="kicker">Learning</p>
-      <h2 class="t-headline">Educational Qualifications</h2>
-    </div>
-    <div id="home-edu"></div>
-    <div style="padding-top:28px">
-      <a class="btn btn-outline" href="pages/education.html">
-        Education
-        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
 <!-- ── FEATURED PROJECTS ──────────────────────────── -->
 <section class="section">
   <div class="wrap">
@@ -625,14 +606,6 @@ const experience = [
   {shortName:"Seap Infotech",role:"Software Development Engineer",type:"Full-time",start:"Oct 2025",end:"Present",location:"Kolkata, India",domain:"SaaS · Asset Management",achievements:["Executed end-to-end API validation and cross-platform mobile testing (Android/iOS), expanding test coverage by 40% for international client modules.","Designed and deployed core modules for a scalable SaaS Asset Management platform using C#, .NET, and SQL Server.","Built a Playwright + Java hybrid automation framework, cutting regression testing time by 60%."]},
   {shortName:"WBSETCL",role:"Data & Analytics Analyst",type:"Full-time",start:"Jun 2024",end:"Aug 2025",location:"Kolkata, India",domain:"Power Grid · ML Forecasting",achievements:["Developed ML forecasting solutions for electricity demand, improving accuracy by 20–25%.","Built Power BI dashboards for grid performance, reducing manual reporting time by 15 hrs/week."]},
   {shortName:"InnoByte Services",role:"Data & Business Analyst",type:"Internship",start:"Feb 2024",end:"May 2024",location:"New Delhi, India",domain:"Business Intelligence",achievements:["Analysed complex datasets with Python and SQL, improving reporting efficiency by 25%."]}
-];
-
-/* ── Education ───────────────────────────────────── */
-const education = [
-  {institution:"IGNOU Univesity",short:"IGNOU, India",degree:"Master in Business Administration",field:"MBA in General Business Management and IT Management",start:"In",end:"Progress", gpa:"",note:"Completed 15+ intensive modules (Inc HBRs) focusing on IT Management, Project Management, and organizational leadership."},
-  {institution:"Siebel School of Computing and Data Science",short:"Illinois, USA",degree:"Master's of Computer Science",field:"CS",start:"Jun 2023",end:"Dec 2024",gpa:"3.4 / 4.0",note:"Advanced Software Engineering and Data Science, Machine Learning. Mastered advanced data structures, algorithms, System Design and distributed systems."},
-  {institution:"Bengal Institute of Technology & Management",short:"Kolkata, West Bengal, India",degree:"Bachelor of Technology",field:"Electrical & Computer Science Engineering",start:"Jun 2019",end:"Jul 2023",gpa:"9.17 / 10",note:"First Class with Distinction (Honours)"},
-  {institution:"West Bengal University of Technology",short:"Kolkata",degree:"Diploma of Education",field:"Electrical, Electronics & Communications Engineering",start:"Jul 2016",end:"Jul 2019",gpa:"8.5 / 10",note:"First Class with Distinction"}
 ];
 
 /* ── Projects ────────────────────────────────────── */
@@ -1420,66 +1393,6 @@ function buildHomeExp() {
     </div>`).join('');
 }
 
-function buildHomeEducation() {
-  const el = document.getElementById('home-edu');
-
-  if (!el) return;
-
-  el.innerHTML = education.map(e => `
-    <div class="home-exp-row reveal">
-
-      <div>
-        <p class="t-small">
-          ${e.start} – ${e.end}
-        </p>
-
-        <p class="t-small mt-xs">
-          ${e.short}
-        </p>
-      </div>
-
-      <div>
-        <p class="t-title mb-xs">
-          ${e.degree}
-        </p>
-
-        <p class="t-small mb-sm">
-          ${e.institution}
-        </p>
-
-        <p class="t-body">
-          ${e.field}
-        </p>
-
-        ${
-          e.gpa
-            ? `
-              <p class="t-small mt-sm">
-                GPA —
-                <strong style="color:var(--t1)">
-                  ${e.gpa}
-                </strong>
-              </p>
-            `
-            : ''
-        }
-
-        ${
-          e.note
-            ? `
-              <p class="t-small mt-sm" style="color:var(--t4)">
-                ${e.note}
-              </p>
-            `
-            : ''
-        }
-
-      </div>
-
-    </div>
-  `).join('');
-}
-
 function buildHomeProjects() {
   const el = document.getElementById('home-projects');
   if (!el) return;
@@ -1549,16 +1462,12 @@ function typeLoop() {
 
 /* ── Init ────────────────────────────────────────── */
 initShared('home', '');
-
 buildHomeExp();
-buildHomeEducation();
 buildHomeProjects();
 buildHomeServices();
 buildDocs();
 buildReadingPreview();
-
 setTimeout(initReveals, 150);
-
 typeLoop();
 </script>
 </body>
