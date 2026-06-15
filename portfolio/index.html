@@ -1406,6 +1406,15 @@ function buildDocs() {
     </div>`).join('');
 }
 
+function buildReadingPreview() {
+  const el = document.getElementById('reading-book-chips');
+  if (!el) return;
+  el.innerHTML = READING_PREVIEW.map(b => `
+    <a href="pages/books.html" class="reading-book-chip">
+      <span class="book-dot" style="background:${b.color}"></span>
+      ${b.title}
+    </a>`).join('');
+}
 
 /* ── Typing animation ────────────────────────────── */
 const ROLES = ['Software Development Engineer','SDET — Test Automation','Data Analyst','QA Engineer','Full-Stack Developer'];
