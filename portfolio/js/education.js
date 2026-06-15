@@ -47,7 +47,7 @@ const EDU = [
     end: "Dec 2024",
     gpa: "3.4 / 4.0",
     note:
-      "Advanced Software Engineering, Data Science, Machine Learning, System Design, and Distributed Systems."
+      "Advanced Software Engineering, Data Science, Machine Learning, System Design and Distributed Systems."
   },
   {
     institution: "Bengal Institute of Technology & Management",
@@ -62,7 +62,7 @@ const EDU = [
   {
     institution: "West Bengal University of Technology",
     short: "WBUT, Kolkata",
-    degree: "Diploma of Education",
+    degree: "Diploma in Engineering and Technology",
     field: "Electrical, Electronics & Communications Engineering",
     start: "Jul 2016",
     end: "Jul 2019",
@@ -73,12 +73,12 @@ const EDU = [
 
 
 const CERTS = [
-  ["EF SET English Certificate 75/100 (C2 Proficient)", "EF Education First"],
+  ["Full-Stack Software Developer Professional", "Google & IBM - Coursera, Udemy"],
+  ["Project Management Professional", "Google & Microsoft — Coursera (Agile & Scrum, Sprint Planing, PMP Formula, Project Life Cycle)"],
   ["Data Analytics Professional", "IBM & Google"],
-  ["Python for Everybody Specialization", "University of Michigan"],
-  ["Project Management Professional (Agile & SCRUM)", "Google & Microsoft"],
-  ["McKinsey.org Learning Program", "McKinsey"],
-  ["Full-Stack Software Developer", "Udemy"]
+  ["Business Analysis Professional", "IIBA-ECBA/CBAP, PMI-PBA — Udemy"],
+  ["Software Engineer Certification", "HackerRank"],
+  ["EF SET English Certificate 75/100 (C2 Proficient)", "EF SET"]
 ];
 
 const COURSES = [
@@ -88,9 +88,14 @@ const COURSES = [
     detail: "React · Java · Spring Boot · SQL"
   },
   {
-    title: "Google Advanced Data Analytics",
-    provider: "Google / Coursera",
-    detail: "Python · R · Statistics"
+    title: "Data Analytics by Google & IBM",
+    provider: "Coursera",
+    detail: "Python · R · Statistics · Power BI"
+  },
+  {
+    title: "Project Management Professional",
+    provider: "Google & Microsoft",
+    detail: "Agile · SCRUM"
   },
   {
     title: "Machine Learning Specialization",
@@ -108,19 +113,9 @@ const COURSES = [
     detail: "Data Science Workflows"
   },
   {
-    title: "Data Analytics Professional",
-    provider: "IBM & Google",
-    detail: "Python · R · Power BI"
-  },
-  {
     title: "Python for Everybody",
     provider: "University of Michigan",
     detail: "Python · Data Structures"
-  },
-  {
-    title: "Project Management Professional",
-    provider: "Google & Microsoft",
-    detail: "Agile · SCRUM"
   }
 ];
 
