@@ -84,69 +84,6 @@
 @media (min-width: 1024px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
 .svc-card { background: var(--bg); padding: clamp(20px, 3vw, 28px); }
 
-/* ══════════════════════════════════════════════════
-   READING SECTION
-══════════════════════════════════════════════════ */
-.reading-banner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  align-items: center;
-  padding: clamp(32px, 5vw, 56px);
-  border: 1px solid var(--b1);
-  border-radius: 12px;
-  background: var(--bg2);
-  position: relative;
-  overflow: hidden;
-}
-@media (min-width: 768px) {
-  .reading-banner { grid-template-columns: 1fr auto; }
-}
-.reading-banner::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, #7c3aed, #2563eb, #0891b2);
-}
-.reading-book-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-.reading-book-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--t2);
-  background: var(--bg);
-  border: 1px solid var(--b1);
-  border-radius: 100px;
-  white-space: nowrap;
-  transition: border-color 0.2s, color 0.2s;
-}
-.reading-book-chip:hover { border-color: var(--b2); color: var(--t1); }
-.book-dot {
-  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
-}
-.reading-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-}
-@media (min-width: 768px) {
-  .reading-stats { align-items: flex-end; text-align: right; }
-}
-.reading-big-num {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 600;
-  line-height: 1;
-  color: var(--t1);
-}
 
 /* ══════════════════════════════════════════════════
    ENGINEERING DOCS SECTION
@@ -538,51 +475,6 @@
 </section>
 
 <hr class="rule">
-
-<!-- ════════════════════════════════════════════════════
-     READING LIST — banner section (no nav link needed)
-═════════════════════════════════════════════════════ -->
-<!--
-  <section class="section">
-    <div class="wrap">
-      <div class="reveal" style="margin-bottom:40px">
-        <p class="kicker">Continuous Learning</p>
-        <h2 class="t-headline">What I'm Reading</h2>
-      </div>
-      <div class="reading-banner reveal">
-        <div>
-          <p class="t-body" style="max-width:520px;margin-bottom:24px">
-            I track every technical and self-development book I read — with key learnings, personal takeaways, and who should read it. Continuous learning is part of how I work, not something I do separately.
-          </p>
-          <div class="reading-book-row" id="reading-book-chips"></div>
-          <div style="margin-top:28px">
-            <a class="btn btn-dark" href="pages/books.html">
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-              View Reading List
-            </a>
-          </div>
-        </div>
-        <div class="reading-stats">
-          <div>
-            <!--
-            <div class="reading-big-num" id="reading-count">20</div>
-            <p class="t-label">Books read</p>
-          -->
-          </div>
-          <div style="margin-top:12px">
-            <!--
-            <div class="reading-big-num" id="reading-pages">2,643</div>
-            <p class="t-label">Pages read</p>
-          -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!--
-<hr class="rule">
--->
 
 
 <!-- ── CTA ───────────────────────────────────────── -->
@@ -1275,16 +1167,6 @@ Before declaring a design complete:
   }
 ];
 
-/* ── Reading list books (subset for home preview) ── */
-const READING_PREVIEW = [
-  { title: "Technical", color: "#2563eb" },
-  { title: "Self-Help", color: "#7c3aed" },
-  { title: "Data Science", color: "#059669" },
-  { title: "Psychology", color: "#d97706" },
-  { title: "Business", color: "#0891b2" },
-  { title: "Python for Data Analysis", color: "#059669" }
-];
-
 /* ═══════════════════════════════════════════════════
    MARKDOWN → HTML RENDERER (for modal content)
 ═══════════════════════════════════════════════════ */
@@ -1524,15 +1406,6 @@ function buildDocs() {
     </div>`).join('');
 }
 
-function buildReadingPreview() {
-  const el = document.getElementById('reading-book-chips');
-  if (!el) return;
-  el.innerHTML = READING_PREVIEW.map(b => `
-    <a href="pages/books.html" class="reading-book-chip">
-      <span class="book-dot" style="background:${b.color}"></span>
-      ${b.title}
-    </a>`).join('');
-}
 
 /* ── Typing animation ────────────────────────────── */
 const ROLES = ['Software Development Engineer','SDET — Test Automation','Data Analyst','QA Engineer','Full-Stack Developer'];
