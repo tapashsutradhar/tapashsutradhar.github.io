@@ -28,8 +28,8 @@ setTimeout(initReveals, 100);
 
 const EDU = [
   {
-    institution: "IGNOU University",
-    short: "IGNOU, India",
+    institution: "Umass Global",
+    short: "Umass, USA",
     degree: "Master in Business Administration",
     field: "MBA in General Business Management and IT Management",
     start: "In",
