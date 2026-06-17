@@ -38,7 +38,8 @@ const EDU = [
     note:
       "Completed 15+ intensive modules (including HBRs) focusing on IT Management, Project Management, and organizational leadership."
   },
-  {
+  
+/*  {
     institution: "Siebel School of Computing and Data Science",
     short: "Illinois, USA",
     degree: "Master of Computer Science",
@@ -49,6 +50,8 @@ const EDU = [
     note:
       "Advanced Software Engineering, Data Science, Machine Learning, System Design and Distributed Systems."
   },
+  */
+
   {
     institution: "Bengal Institute of Technology & Management",
     short: "BITM, Kolkata",
