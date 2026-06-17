@@ -155,7 +155,7 @@ function renderFooter(containerId = 'footer-container') {
   <div class="footer-grid">
     <div>
       <p class="serif" style="font-size:clamp(1rem,2vw,1.125rem);font-weight:500;color:var(--t1);margin-bottom:10px;letter-spacing:-.02em">Tapash Sutradhar</p>
-      <p class="t-small" style="max-width:260px;line-height:1.75">SDE · SDET · Data Analyst · QA Engineer based in Kolkata, India.</p>
+      <p class="t-small" style="max-width:260px;line-height:1.75">SDE · SDET/QA Engineer · Data & Business Analyst · Technical Product Manager (TPM) · Solution Consultant</p>
       <div class="social-row">
         ${DATA.socials.map(s => `<a class="social-btn" href="${s.href}" target="_blank" rel="noopener" title="${s.label}">${svgIcon(s.svg, s.w||16)}</a>`).join('')}
       </div>
@@ -175,7 +175,7 @@ function renderFooter(containerId = 'footer-container') {
   </div>
   <div class="footer-bottom">
     <p class="t-small">© ${new Date().getFullYear()} Tapash Sutradhar. All rights reserved.</p>
-    <p class="t-small" style="color:var(--t4)">SDE · SDET · Data Analyst · QA Engineer</p>
+    <p class="t-small" style="color:var(--t4)">SDE · SDET/QA Engineer · Data & Business Analyst · Technical Product Manager (TPM) · Solutions Consultant</p>
   </div>
   </div></footer>`;
 }
