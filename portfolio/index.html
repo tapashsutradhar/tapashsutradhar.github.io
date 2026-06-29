@@ -558,6 +558,53 @@ const DOCS = [
 
 > How I approach any new problem, design systems, optimise performance, and debug production.
 
+## Engineering Operating System (OS)
+
+## 1. Core Philosophy
+- Build scalable and maintainable systems
+- Prioritize clean architecture over quick hacks
+- Solve business problems, not just technical tasks
+
+## 2. Engineering Principles
+- Simplicity > Complexity
+- Readability > Cleverness
+- Performance with scalability
+- API-first thinking
+
+## 3. Development Workflow
+1. Understand problem deeply
+2. Break into modules/services
+3. Design architecture (microservices if needed)
+4. Implement with clean code practices
+5. Write testable, reusable components
+6. Optimize performance
+7. Deploy & monitor
+
+## 4. Tech Strategy
+- Backend: Java, Spring Boot
+- Architecture: Microservices
+- API: REST / GraphQL
+- Database: SQL + NoSQL
+- Cloud: AWS
+- Frontend (if needed): React / Next.js
+
+## 5. Problem Solving Approach
+- Identify bottlenecks
+- Analyze trade-offs
+- Optimize for scalability
+- Ensure long-term maintainability
+
+## 6. Collaboration Style
+- Client-first mindset
+- Clear communication
+- Agile development
+- Continuous feedback loop
+
+## 7. Continuous Growth
+- Learn new backend patterns
+- Explore AI integrations
+- Improve system design skills
+
 ## Approaching Any New Problem
 
 When I receive any engineering problem, my first 30 minutes are deliberately structured:
@@ -660,7 +707,43 @@ Alert fires
 
 > Structured, repeatable engineering processes for every major workflow.
 
-## Backend Development SOP
+## Backend Feature Development
+
+## Step 1: Requirement Analysis
+- Understand business logic
+- Identify edge cases
+- Define API contract
+
+## Step 2: Design
+- Choose architecture (monolith / microservice)
+- Define database schema
+- Plan endpoints
+
+## Step 3: Implementation
+- Write clean, modular code
+- Follow SOLID principles
+- Use proper error handling
+
+## Step 4: Testing
+- Unit tests
+- Integration tests
+- API validation
+
+## Step 5: Optimization
+- Improve query performance
+- Reduce latency
+- Handle concurrency
+
+## Step 6: Deployment
+- CI/CD pipeline
+- Cloud deployment (AWS)
+
+## Step 7: Monitoring
+- Logs
+- Metrics
+- Debug issues
+
+## Backend Development
 
 **Flow:** Requirement → Design → Implementation → Testing → Deployment
 
@@ -731,7 +814,15 @@ Layer 5: ROOT CAUSE — not just the fix, but WHY it happened
 - Correlate events by timestamp before drawing conclusions
 - Document every hypothesis tested and the result
 
-## Microservices SOP
+## Microservices SOP (Microservices Architecture)
+
+1. Identify service boundaries
+2. Define communication (REST / messaging)
+3. Ensure loose coupling
+4. Implement service discovery
+5. Add API gateway
+6. Handle fault tolerance
+7. Monitor services independently
 
 **Service decomposition principles:**
 - Each service owns its own data store
@@ -746,7 +837,26 @@ Layer 5: ROOT CAUSE — not just the fix, but WHY it happened
 | REST API | Synchronous, query-response |
 | Kafka events | Async, decoupled, audit trail needed |
 | gRPC | High-throughput internal service calls |
-| Webhooks | External system callbacks |`
+| Webhooks | External system callbacks |
+
+## Code Quality
+
+- Follow naming conventions
+- Keep functions small
+- Avoid duplication
+- Write meaningful comments
+- Maintain folder structure
+- Use linting & formatting tools
+
+## Debugging System
+
+1. Reproduce issue
+2. Check logs
+3. Isolate module
+4. Identify root cause
+5. Fix with minimal impact
+6. Add test to prevent recurrence
+`
   },
 
   {
