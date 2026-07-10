@@ -28,7 +28,7 @@ setTimeout(initReveals, 100);
 
 const EDU = [
   {
-    institution: "Amity University, India",
+    institution: "Amity University",
     short: "Amity University, India",
     degree: "Master in Business Administration",
     field: "MBA in General Business Management Specialised in IT Management",
