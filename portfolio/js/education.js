@@ -28,29 +28,16 @@ setTimeout(initReveals, 100);
 
 const EDU = [
   {
-    institution: "Umass Global",
-    short: "Umass, USA",
+    institution: "Amity University, India",
+    short: "Amity University, India",
     degree: "Master in Business Administration",
-    field: "MBA in General Business Management and IT Management",
+    field: "MBA in General Business Management Specialised in IT Management",
     start: "In",
     end: "Progress",
     gpa: "",
     note:
       "Completed 15+ intensive modules (including HBRs) focusing on IT Management, Project Management, and organizational leadership."
   },
-  
-/*  {
-    institution: "Siebel School of Computing and Data Science",
-    short: "Illinois, USA",
-    degree: "Master of Computer Science",
-    field: "Computer Science",
-    start: "Jun 2023",
-    end: "Dec 2024",
-    gpa: "3.4 / 4.0",
-    note:
-      "Advanced Software Engineering, Data Science, Machine Learning, System Design and Distributed Systems."
-  },
-  */
 
   {
     institution: "Bengal Institute of Technology & Management",
@@ -136,7 +123,7 @@ el.innerHTML = `
     <h1 class="t-headline" style="animation:fadeUp .6s .08s ease both">
     Education
     </h1>
-    
+
     <p class="t-body" style="max-width:480px;margin-top:10px;animation:fadeUp .6s .16s ease both">Academic degrees, professional certifications, and continuing education.</p>
   </div></div>
   <section class="section"><div class="wrap">
