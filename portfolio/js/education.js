@@ -59,7 +59,7 @@ const CERTS = [
   ["Project Management (Agile and Scrum)", "Google"],
   ["Data Science & Analytics Professional", "IBM & Google"],
   ["Business Analysis Professional", "IIBA-ECBA/CBAP, PMI-PBA — Udemy"],
-  ["EF SET English Certificate 75/100 (C2 Proficient)", "EF SET"]
+  ["EF SET English Certificate", "EF SET - 75/100 (C2 Proficient)"]
 ];
 
 const COURSES = [
