@@ -31,12 +31,12 @@ const EDU = [
     institution: "Amity University",
     short: "Amity University, India",
     degree: "Master in Business Administration",
-    field: "MBA in General Business Management Specialised in IT Management",
+    field: "MBA in General Management Specialised in IT Management",
     start: "In",
     end: "Progress",
     gpa: "",
     note:
-      "Completed 15+ intensive modules (including HBRs) focusing on IT Management, Project Management, and organizational leadership."
+      "focusing on IT Management, corporate finance, marketing strategy, Product Management and organizational leadership."
   },
 
   {
@@ -48,26 +48,17 @@ const EDU = [
     end: "Jul 2023",
     gpa: "9.17 / 10",
     note: "First Class with Distinction (Honours)"
-  },
-  {
-    institution: "West Bengal University of Technology",
-    short: "WBUT, Kolkata",
-    degree: "Diploma in Engineering and Technology",
-    field: "Electrical, Electronics & Communications Engineering",
-    start: "Jul 2016",
-    end: "Jul 2019",
-    gpa: "8.5 / 10",
-    note: "First Class with Distinction"
   }
+
 ];
 
 
 const CERTS = [
-  ["Full-Stack Software Developer Professional", "Google & IBM - Coursera, Udemy"],
-  ["Project Management Professional", "Google & Microsoft — Coursera (Agile & Scrum, Sprint Planing, PMP Formula, Project Life Cycle)"],
-  ["Data Analytics Professional", "IBM & Google"],
-  ["Business Analysis Professional", "IIBA-ECBA/CBAP, PMI-PBA — Udemy"],
   ["Software Engineer Certification", "HackerRank"],
+  ["Software Development and Testing", "Udemy"],
+  ["Project Management (Agile and Scrum)", "Google"],
+  ["Data Science & Analytics Professional", "IBM & Google"],
+  ["Business Analysis Professional", "IIBA-ECBA/CBAP, PMI-PBA — Udemy"],
   ["EF SET English Certificate 75/100 (C2 Proficient)", "EF SET"]
 ];
 
@@ -75,7 +66,7 @@ const COURSES = [
   {
     title: "Full Stack Development",
     provider: "Udemy",
-    detail: "React · Java · Spring Boot · SQL"
+    detail: "React · Java · Spring Boot · SQL · JS · TS · HTML5/CSS3"
   },
   {
     title: "Data Analytics by Google & IBM",
@@ -86,11 +77,6 @@ const COURSES = [
     title: "Project Management Professional",
     provider: "Google & Microsoft",
     detail: "Agile · SCRUM"
-  },
-  {
-    title: "Machine Learning Specialization",
-    provider: "DeepLearning.ai",
-    detail: "Supervised & Unsupervised ML"
   },
   {
     title: "Software Testing: QA to Expert",
