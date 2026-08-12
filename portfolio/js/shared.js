@@ -175,7 +175,7 @@ function renderFooter(containerId = 'footer-container') {
   </div>
   <div class="footer-bottom">
     <p class="t-small">© ${new Date().getFullYear()} Tapash Sutradhar. All rights reserved.</p>
-    <p class="t-small" style="color:var(--t4)">SDE · SDET/QA Engineer · Data & Business Analyst · Technical Product Manager (TPM) · Solutions Consultant</p>
+    <p class="t-small" style="color:var(--t4)">Software Development Engineer (SDE) · SDET/QA Automation · Data Analyst</p>
   </div>
   </div></footer>`;
 }
