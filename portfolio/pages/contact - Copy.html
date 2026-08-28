@@ -210,26 +210,25 @@
   </div>
 </section>
 
-
-
 <div id="footer-container" data-root="../"></div>
-
-<!-- 1. LOAD THE HIDDEN CONFIG KEYS FIRST -->
-<script src="../js/config.js"></script>
-
-<!-- 2. LOAD OFFICIAL EMAILJS LIBRARY SECOND -->
-<script type="text/javascript" src="https://jsdelivr.net"></script>
-
-<!-- 3. LOAD YOUR SHARED SCRIPT -->
 <script src="../js/shared.js"></script>
-
-<!-- 4. YOUR UPDATED CORE LOGIC -->
 <script>
 /* ══════════════════════════════════════════════════════
-   EMAILJS INITIALIZATION
-   Values are now pulled safely from your js/config.js file
+   EMAILJS CONFIGURATION
+   Replace these 3 values with your real EmailJS IDs
+   Get them at: https://www.emailjs.com
 ══════════════════════════════════════════════════════ */
-emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+/*
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';      // Account → General → Public Key
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';      // Email Services → your service ID
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';     // Email Templates → your template ID
+*/
+const EMAILJS_PUBLIC_KEY  = 'TPv-kqTuxAxfQjPaf';      // Account → General → Public Key
+const EMAILJS_SERVICE_ID  = 'service_v4o7nnq';      // Email Services → your service ID
+const EMAILJS_TEMPLATE_ID = 'template_qbb0lwc';     // Email Templates → your template ID
+/* ═══════════════════════════════════════════════════ */
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 function showError(msg) {
   const banner = document.getElementById('error-banner');
@@ -262,8 +261,7 @@ document.getElementById('contact-form').addEventListener('submit', async e => {
   btn.innerHTML = '<span class="spinner"></span> Sending…';
 
   try {
-    // Sends using variables mapped directly out of your config object
-    await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, {
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       from_name:  name,
       from_email: email,
       subject:    subject || 'Portfolio enquiry',
@@ -279,9 +277,9 @@ document.getElementById('contact-form').addEventListener('submit', async e => {
   } catch (err) {
     console.error('EmailJS error:', err);
 
-    // Dynamic verification error handling
-    if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
-      showError('EmailJS not configured yet. Please check that you created portfolio/js/config.js properly.');
+    // If EmailJS not configured yet, show helpful message
+    if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+      showError('EmailJS not configured yet. Please set up your EmailJS keys in pages/contact.html — see the comments at the top of the script.');
     } else {
       showError('Failed to send message. Please try emailing directly at sutradhartapashapd@gmail.com');
     }
@@ -305,4 +303,3 @@ initShared('contact', '../');
 </script>
 </body>
 </html>
-

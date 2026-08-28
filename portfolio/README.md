@@ -97,8 +97,6 @@ portfolio-multipage/
 │   ├── projects.css        ← project rows only
 │   ├── services.css        ← service rows only
 │   ├── education.css       ← edu/courses/certs only
-│   ├── research.css        ← paper rows + search only
-│   ├── articles.css        ← article list + reader + form only
 │   └── resume.css          ← resume cards only
 ├── js/
 │   ├── shared.js           ← nav, footer, theme, toast, reveal — ALL pages use this
@@ -107,13 +105,11 @@ portfolio-multipage/
 │   ├── projects.js         ← projects data + render
 │   ├── services.js         ← services data + render
 │   ├── education.js        ← edu/certs/courses data + render
-│   ├── research.js         ← research data + search filter
-│   ├── articles.js         ← full CRUD + reader + admin mode
 │   └── resume.js           ← resume page render
 └── pages/
     ├── about.html contact.html skills.html experience.html
     ├── projects.html services.html education.html
-    ├── research.html articles.html resume.html
+    ├── resume.html
 ```
 
 #### Contact form → email — uses EmailJS (free, no backend needed, works on GitHub Pages). When someone fills the form it sends directly to example@gmail.com
